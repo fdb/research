@@ -149,8 +149,11 @@ function renderStackPage(editor) {
       stacks.map((s) =>
         h('button', {
           class: `chip ${s.id === stack?.id ? 'active' : ''}`,
-          onclick: () => { state.sel[page] = s.id; state.selOp = null; emit('sel'); },
-          ondblclick: () => renameStack(page, s),
+          // tap selects; tapping the already-active chip renames (touch-friendly)
+          onclick: () => {
+            if (s.id === stack?.id) renameStack(page, s);
+            else { state.sel[page] = s.id; state.selOp = null; emit('sel'); }
+          },
         }, s.name),
       ),
       h('button', { class: 'chip add', onclick: () => addStack(page) }, '+'),
@@ -428,8 +431,10 @@ function renderMusicPage(editor) {
       patNames.map((name) =>
         h('button', {
           class: `chip ${name === sel ? 'active' : ''}`,
-          onclick: () => { state.selPattern = name; emit('sel'); },
-          ondblclick: () => renamePattern(name),
+          onclick: () => {
+            if (name === sel) renamePattern(name);
+            else { state.selPattern = name; emit('sel'); }
+          },
         }, name),
       ),
       h('button', { class: 'chip add', onclick: addPattern }, '+'),
@@ -703,6 +708,10 @@ function openMenu() {
         }, 'reset to ARTEFAKT demo'),
       ),
       h('p', { class: 'hint' }, 'projects autosave to this browser. export json to keep or share a piece.'),
+      h('p', { class: 'hint' },
+        'baukasten is a tiny werkkzeug-style demotool — an experiment in AI as tool-writer rather than artefact-generator. every op is deterministic and inspectable; the artefacts are yours. engine: zig→wasm. ',
+        h('a', { href: 'README.md', target: '_blank' }, 'read the concept'),
+      ),
       h('button', { class: 'ghost-btn wide', onclick: closeOverlay }, 'close'),
     ),
   );

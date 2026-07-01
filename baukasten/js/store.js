@@ -38,14 +38,15 @@ const undoStack = [];
 let undoScheduled = false;
 
 export function pushUndo() {
-  // coalesce bursts (slider drags) into one undo entry per frame
-  if (undoScheduled) return;
-  undoScheduled = true;
-  const snap = JSON.stringify(state.project);
-  requestAnimationFrame(() => {
-    undoScheduled = false;
-  });
-  undoStack.push(snap);
+  // coalesce bursts (slider drags) into a single undo entry: snapshot the
+  // pre-burst state once, then ignore pushes until the burst goes quiet
+  if (undoScheduled) {
+    clearTimeout(undoScheduled);
+    undoScheduled = setTimeout(() => { undoScheduled = false; }, 350);
+    return;
+  }
+  undoScheduled = setTimeout(() => { undoScheduled = false; }, 350);
+  undoStack.push(JSON.stringify(state.project));
   if (undoStack.length > 60) undoStack.shift();
 }
 

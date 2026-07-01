@@ -91,6 +91,7 @@ button:hover { border-color: var(--fg); }
 #scrub {
   width: 100%;
   margin: 0;
+  accent-color: oklch(85% 0 0);
 }
 
 /* --- editor --- */
