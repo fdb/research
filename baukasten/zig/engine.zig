@@ -816,14 +816,15 @@ fn opCube(ctx: *MeshCtx, p: [*]const f32) void {
     const nvf = (seg + 1) * (seg + 1); // verts per face
     const nif = seg * seg * 6;
     const m = meshAlloc(nvf * 6, nif * 6);
-    // face definitions: normal axis, u axis, v axis, extents
+    // face definitions: normal axis, u axis, v axis. u×v must equal the
+    // normal so recomputed normals (after displace/twist) stay outward.
     const faces = [6][9]f32{
         .{ 0, 0, 1, 1, 0, 0, 0, 1, 0 }, // +z
         .{ 0, 0, -1, -1, 0, 0, 0, 1, 0 }, // -z
         .{ 1, 0, 0, 0, 0, -1, 0, 1, 0 }, // +x
         .{ -1, 0, 0, 0, 0, 1, 0, 1, 0 }, // -x
-        .{ 0, 1, 0, 1, 0, 0, 0, 0, 1 }, // +y
-        .{ 0, -1, 0, 1, 0, 0, 0, 0, -1 }, // -y
+        .{ 0, 1, 0, 0, 0, 1, 1, 0, 0 }, // +y
+        .{ 0, -1, 0, 0, 0, -1, 1, 0, 0 }, // -y
     };
     var f: u32 = 0;
     var vi: u32 = 0;
@@ -847,7 +848,7 @@ fn opCube(ctx: *MeshCtx, p: [*]const f32) void {
                 vi += 1;
             }
         }
-        gridIndices(m, nif * f, nvf * f, seg, seg, false);
+        gridIndices(m, nif * f, nvf * f, seg, seg, true);
     }
     ctx.push(m);
 }
@@ -873,7 +874,7 @@ fn opSphere(ctx: *MeshCtx, p: [*]const f32) void {
             vi += 1;
         }
     }
-    gridIndices(m, 0, 0, su, sv, false);
+    gridIndices(m, 0, 0, su, sv, true);
     ctx.push(m);
 }
 
@@ -966,7 +967,7 @@ fn opTorus(ctx: *MeshCtx, p: [*]const f32) void {
             vi += 1;
         }
     }
-    gridIndices(m, 0, 0, su, sv, true);
+    gridIndices(m, 0, 0, su, sv, false);
     ctx.push(m);
 }
 
@@ -987,7 +988,7 @@ fn opGrid(ctx: *MeshCtx, p: [*]const f32) void {
             vi += 1;
         }
     }
-    gridIndices(m, 0, 0, su, sv, true);
+    gridIndices(m, 0, 0, su, sv, false);
     ctx.push(m);
 }
 
