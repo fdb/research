@@ -331,11 +331,23 @@ function paramControl(page, opIndex, op, p) {
       },
     }));
   } else {
+    // accepts an expression, or a JSON keyframe array [[beat,value,"ease"],...]
     const input = h('input', {
       type: 'text', class: 'expr-input', value: typeof value === 'string' ? value : JSON.stringify(value.kf),
       spellcheck: 'false',
       oninput: (e) => {
         const src = e.target.value;
+        if (src.trim().startsWith('[')) {
+          try {
+            const kf = JSON.parse(src);
+            if (!Array.isArray(kf) || !kf.every((k) => Array.isArray(k) && typeof k[0] === 'number' && typeof k[1] === 'number')) throw new Error();
+            e.target.classList.remove('invalid');
+            setParam(page, opIndex, p.key, { kf });
+          } catch {
+            e.target.classList.add('invalid');
+          }
+          return;
+        }
         const ok = isValidExpr(src);
         e.target.classList.toggle('invalid', !ok);
         if (ok) setParam(page, opIndex, p.key, src);

@@ -161,7 +161,9 @@ export function makeDemoProject() {
           op('light', { azimuth: '0.8+sb*0.003', elevation: 0.6, intensity: 1.15, ambient: 0.12, rim: '0.5+kick*0.6' }),
           op('camera', {
             px: 'sin(sb*0.045)*5.6', py: '2.3+sin(sb*0.09)*0.9', pz: 'cos(sb*0.045)*5.6',
-            tx: 0, ty: 1.7, tz: 0, fov: 56, roll: 0, shake: 'snare*0.12',
+            tx: 0, ty: 1.7, tz: 0,
+            fov: { kf: [[80, 62], [104, 50, 'smooth'], [144, 58, 'smooth']] }, // slow push-in on the relic
+            roll: 0, shake: 'snare*0.12',
           }),
           op('object', {
             mesh: 'ms-terrain', tex: 'tx-substrat',
