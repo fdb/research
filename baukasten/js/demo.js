@@ -40,7 +40,7 @@ export function makeDemoProject() {
       {
         id: 'tx-gestein', name: 'gestein',
         ops: [
-          op('bricks', { nx: 3, ny: 7, mortar: 0.045, bevel: 0.035, shift: 0.5, seed: 5 }),
+          op('bricks', { nx: 2, ny: 12, mortar: 0.045, bevel: 0.035, shift: 0.5, seed: 5 }),
           op('blend', { with: 'tx-koernung', mode: 2, amount: 0.75 }),
           op('colorize', { pal: PALETTES.bone.slice() }),
           op('adjust', { brightness: -0.06, contrast: 1.2, gamma: 1 }),
@@ -51,7 +51,7 @@ export function makeDemoProject() {
         ops: [
           op('voronoi', { scale: 7, seed: 3, jitter: 1, mode: 0 }),
           op('invert', {}),
-          op('adjust', { brightness: 0, contrast: 1.7, gamma: 0.8 }),
+          op('adjust', { brightness: -0.08, contrast: 1.5, gamma: 0.95 }),
           op('colorize', { pal: PALETTES.ember.slice() }),
         ],
       },
@@ -177,13 +177,13 @@ export function makeDemoProject() {
             mesh: 'ms-relikt', tex: 'tx-relikt',
             px: 0, py: '1.8+sin(b*0.196)*0.25', pz: 0,
             rx: 'sin(sb*0.03)*0.35', ry: 'b*0.196', rz: 0, scale: 1,
-            emissive: '0.15+kick*0.7', gloss: 0.6,
+            emissive: '0.08+kick*0.3', gloss: 0.6,
           }),
           op('object', {
             mesh: 'ms-kern', tex: 'tx-relikt',
             px: 0, py: '1.8+sin(b*0.196)*0.25', pz: 0,
-            rx: 0, ry: '-b*0.3', rz: 0, scale: '1+kick*0.15',
-            emissive: '1.3+kick*2.6', gloss: 0.2,
+            rx: 0, ry: '-b*0.3', rz: 0, scale: '1+kick*0.1',
+            emissive: '0.7+kick*0.9', gloss: 0.2,
           }),
         ],
       },
@@ -210,13 +210,13 @@ export function makeDemoProject() {
             mesh: 'ms-relikt', tex: 'tx-relikt',
             px: 0, py: '1.8+sb*0.06', pz: 0,
             rx: 'sin(sb*0.03)*0.35', ry: 'b*0.196', rz: 0, scale: 1,
-            emissive: '0.3+kick*0.5', gloss: 0.6,
+            emissive: '0.12+kick*0.25', gloss: 0.6,
           }),
           op('object', {
             mesh: 'ms-kern', tex: 'tx-relikt',
             px: 0, py: '1.8+sb*0.06', pz: 0,
             rx: 0, ry: '-b*0.3', rz: 0, scale: 1,
-            emissive: '1+kick*1.5', gloss: 0.2,
+            emissive: '0.7+kick*0.7', gloss: 0.2,
           }),
         ],
       },
@@ -227,8 +227,9 @@ export function makeDemoProject() {
       {
         id: 'po-haupt', name: 'haupt',
         ops: [
-          op('bloom', { threshold: 0.55, intensity: '0.7+kick*0.5', radius: 1.3 }),
-          op('grade', { pal: PALETTES.ember.slice(), amount: 0.38, shift: 0 }),
+          // the ember grade grows as the artefact takes form, and lets go at the end
+          op('bloom', { threshold: 0.65, intensity: '0.45+kick*0.25', radius: 1.3 }),
+          op('grade', { pal: PALETTES.ember.slice(), amount: '0.08+smooth(56,84,b)*0.34-smooth(150,190,b)*0.28', shift: 0 }),
           op('aberration', { amount: '0.002+snare*0.006' }),
           op('vignette', { amount: 0.45, size: 0.8 }),
           op('grain', { amount: '0.05+smooth(144,192,b)*0.16' }),

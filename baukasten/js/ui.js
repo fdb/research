@@ -272,7 +272,7 @@ function renderSheet() {
       h('span', { class: 'spacer' }),
       h('button', { class: 'icon-btn', onclick: () => { state.selOp = null; emit('sel'); } }, '×'),
     ),
-    def.params
+    ...def.params
       .filter((p) => !def.hidden?.includes(p.key))
       .map((p) => paramControl(page, state.selOp, op, p)),
   );
