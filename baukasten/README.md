@@ -6,6 +6,8 @@ A tiny, mobile-first demoscene tool in the spirit of farbrausch's
 
 Live: [research.enigmeta.com/baukasten](https://research.enigmeta.com/baukasten/)
 
+![the tool, editing act III of ARTEFAKT](artefakt.jpg)
+
 ## The experiment
 
 Mainstream creative AI operates at the *artefact level*: it generates finished

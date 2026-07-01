@@ -128,7 +128,6 @@ function frame() {
       r.renderMeshPreview(previewId('mesh'), null, performance.now() / 1000);
     } else if (page === 'scene') {
       const scene = evalScene(currentStack('scene'), ctx);
-      window.__dbg = { ctx, scene };
       r.render(scene, [], ctx.t);
     } else if (page === 'post') {
       const shot = shotAt(beat / 4);
@@ -174,6 +173,9 @@ async function boot() {
   });
 
   requestAnimationFrame(frame);
+
+  // console/debug handle
+  window.baukasten = { state };
 }
 
 boot().catch((e) => {
