@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (only if an individual experiment ever needs it locally)
+node_modules/
+
+# Local env / secrets
+.env
+.env.*
+.dev.vars

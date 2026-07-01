@@ -1,0 +1,145 @@
+/*
+ * Shared design system for research.enigmeta.com
+ * OKLCH colors · no rounded corners · light/dark mode.
+ * Each experiment can <link> this file: ../styles.css
+ */
+
+:root {
+  /* Brand hue/chroma — derive tints/shades by varying lightness only */
+  --primary-h: 265;
+  --primary-c: 0.13;
+  --primary: oklch(55% var(--primary-c) var(--primary-h));
+  --primary-light: oklch(70% var(--primary-c) var(--primary-h));
+  --primary-dark: oklch(40% var(--primary-c) var(--primary-h));
+
+  /* Grayscale (chroma 0) */
+  --black: oklch(15% 0 0);
+  --white: oklch(99% 0 0);
+  --gray: oklch(50% 0 0);
+  --light-gray: oklch(92% 0 0);
+
+  --bg: var(--white);
+  --fg: var(--black);
+  --muted: var(--gray);
+  --border: var(--light-gray);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 68ch;
+  --space: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --black: oklch(96% 0 0);
+    --white: oklch(17% 0 0);
+    --gray: oklch(65% 0 0);
+    --light-gray: oklch(30% 0 0);
+    --primary: oklch(72% var(--primary-c) var(--primary-h));
+  }
+}
+
+:root[data-theme="dark"] {
+  --black: oklch(96% 0 0);
+  --white: oklch(17% 0 0);
+  --gray: oklch(65% 0 0);
+  --light-gray: oklch(30% 0 0);
+  --primary: oklch(72% var(--primary-c) var(--primary-h));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0; /* house rule: no rounded corners */
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: calc(var(--space) * 2) var(--space);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 650;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: calc(var(--space) * 2) 0;
+}
+
+/* Experiment index list */
+.experiments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experiments li {
+  border-top: 1px solid var(--border);
+}
+
+.experiments li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.experiments a {
+  display: block;
+  padding: var(--space) 0;
+  color: var(--fg);
+}
+
+.experiments a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.experiments .title {
+  font-weight: 650;
+}
+
+.experiments .desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: var(--space) calc(var(--space) * 0.75);
+  }
+}
