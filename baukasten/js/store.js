@@ -186,6 +186,26 @@ export function moveOp(page, index, dir) {
   }, { invalidate: page });
 }
 
+// Drag-and-drop reorder: `to` is the insertion index in the array *after*
+// the op at `from` has been removed.
+export function moveOpTo(page, from, to) {
+  const stack = currentStack(page);
+  if (!stack || from === to || from < 0 || from >= stack.ops.length) return;
+  mutate(() => {
+    const [op] = stack.ops.splice(from, 1);
+    stack.ops.splice(to, 0, op);
+    if (state.selOp !== null) {
+      if (state.selOp === from) state.selOp = to;
+      else {
+        let sel = state.selOp;
+        if (sel > from) sel -= 1;
+        if (sel >= to) sel += 1;
+        state.selOp = sel;
+      }
+    }
+  }, { invalidate: page });
+}
+
 export function setParam(page, opIndex, key, value) {
   const stack = currentStack(page);
   mutate(() => {

@@ -138,7 +138,33 @@ button:hover { border-color: var(--fg); }
   border-left: 3px solid var(--muted);
   cursor: pointer;
   background: var(--bg);
+  touch-action: pan-y; /* vertical scroll stays native; hold-to-lift drags */
+  user-select: none;
+  -webkit-user-select: none;
 }
+
+.op-grip {
+  color: var(--border);
+  font-size: 0.8rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.op-card.selected .op-grip { color: var(--bg); opacity: 0.6; }
+
+.op-card.lift {
+  position: relative;
+  z-index: 25;
+  opacity: 0.94;
+  border-color: var(--fg);
+  box-shadow: 0 6px 20px oklch(0% 0 0 / 0.35);
+  cursor: grabbing;
+}
+
+.op-list.reordering .op-flow { visibility: hidden; }
+
+.op-card.drop-before { box-shadow: 0 -3px 0 0 var(--primary); }
+.op-card.drop-after { box-shadow: 0 3px 0 0 var(--primary); }
 
 .op-card.cat-generate { border-left-color: oklch(55% var(--primary-c) var(--primary-h)); }
 .op-card.cat-filter { border-left-color: oklch(70% var(--primary-c) var(--primary-h)); }

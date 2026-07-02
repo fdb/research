@@ -5,8 +5,8 @@
 
 import {
   state, subscribe, emit, currentStack, stacksOf, resolveRef,
-  addStack, removeStack, addOp, removeOp, moveOp, setParam, toggleOp,
-  mutate, undo, setProject, clearSaved, newId,
+  addStack, removeStack, addOp, removeOp, moveOpTo, setParam, toggleOp,
+  mutate, undo, setProject, clearSaved,
 } from './store.js';
 import { OPS_BY_PAGE, PALETTES, paletteColor, opDef } from './ops.js';
 import { isValidExpr } from './expr.js';
@@ -172,15 +172,15 @@ function renderStackPage(editor) {
       class: `op-card cat-${def?.cat || 'x'} ${selected ? 'selected' : ''} ${op.enabled === false ? 'off' : ''}`,
       onclick: () => { state.selOp = selected ? null : i; emit('sel'); },
     },
+      h('span', { class: 'op-grip', 'aria-hidden': 'true' }, '⠿'),
       h('span', { class: 'op-name' }, def?.label || op.type),
       h('span', { class: 'op-summary' }, opSummary(page, op)),
       h('span', { class: 'op-actions' },
-        h('button', { class: 'mini', title: 'up', onclick: (e) => { e.stopPropagation(); moveOp(page, i, -1); } }, '↑'),
-        h('button', { class: 'mini', title: 'down', onclick: (e) => { e.stopPropagation(); moveOp(page, i, 1); } }, '↓'),
         h('button', { class: 'mini', title: 'bypass', onclick: (e) => { e.stopPropagation(); toggleOp(page, i); } }, op.enabled === false ? '○' : '●'),
         h('button', { class: 'mini danger', title: 'delete', onclick: (e) => { e.stopPropagation(); removeOp(page, i); } }, '×'),
       ),
     );
+    attachOpDrag(card, list, page, i);
     list.append(card);
     list.append(h('div', { class: 'op-flow' }, '↓'));
   });
@@ -191,6 +191,109 @@ function renderStackPage(editor) {
     : page === 'mesh' ? 'stack up primitives and modifiers. merge pulls in another stack by reference - no wires needed.'
     : page === 'scene' ? 'a scene = env + light + camera + objects. params accept numbers or expressions (t, b, sb, kick, snare...).'
     : 'post ops run left to right over the rendered frame. params accept expressions - try kick or snare.'));
+}
+
+// Drag-and-drop reorder for op cards. Mouse: drag after a small movement
+// threshold. Touch: hold ~0.3s to lift (so the list still scrolls normally),
+// then drag; moving early cancels and lets the scroll happen.
+
+let suppressNextClick = false;
+document.addEventListener('click', (e) => {
+  if (suppressNextClick) {
+    suppressNextClick = false;
+    e.stopPropagation();
+    e.preventDefault();
+  }
+}, true);
+
+function attachOpDrag(card, list, page, index) {
+  card.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0 || e.target.closest('.mini')) return;
+    const isTouch = e.pointerType !== 'mouse';
+    const startY = e.clientY;
+    const startX = e.clientX;
+    let lifted = false;
+    let dropTo = null;
+    let holdTimer = setTimeout(lift, isTouch ? 300 : 400);
+
+    function lift() {
+      holdTimer = null;
+      lifted = true;
+      card.classList.add('lift');
+      list.classList.add('reordering');
+      try { card.setPointerCapture(e.pointerId); } catch { /* pointer gone */ }
+      if (navigator.vibrate) navigator.vibrate(8);
+    }
+
+    // once lifted, the page must not scroll under the drag (touch)
+    const blockScroll = (tev) => { if (lifted) tev.preventDefault(); };
+    document.addEventListener('touchmove', blockScroll, { passive: false });
+
+    const others = () => [...list.querySelectorAll('.op-card')].filter((c) => c !== card);
+    const clearMarks = () => {
+      for (const c of others()) c.classList.remove('drop-before', 'drop-after');
+    };
+
+    const onMove = (ev) => {
+      const dy = ev.clientY - startY;
+      const dx = ev.clientX - startX;
+      if (!lifted) {
+        const moved = Math.abs(dy) > 6 || Math.abs(dx) > 6;
+        if (moved) {
+          if (isTouch) { finish(false); return; } // scrolling, not dragging
+          clearTimeout(holdTimer);
+          lift();
+        }
+        return;
+      }
+      card.style.transform = `translateY(${dy}px)`;
+      // insertion index among the *other* cards
+      let idx = 0;
+      const cs = others();
+      for (const c of cs) {
+        const r = c.getBoundingClientRect();
+        if (ev.clientY > r.top + r.height / 2) idx++;
+      }
+      dropTo = idx;
+      clearMarks();
+      if (cs.length) {
+        if (idx < cs.length) cs[idx].classList.add('drop-before');
+        else cs[cs.length - 1].classList.add('drop-after');
+      }
+      // auto-scroll the editor near its edges
+      const editor = document.getElementById('editor');
+      const er = editor.getBoundingClientRect();
+      if (ev.clientY < er.top + 44) editor.scrollTop -= 10;
+      else if (ev.clientY > er.bottom - 44) editor.scrollTop += 10;
+    };
+
+    function finish(commit) {
+      clearTimeout(holdTimer);
+      document.removeEventListener('touchmove', blockScroll);
+      card.removeEventListener('pointermove', onMove);
+      card.removeEventListener('pointerup', onUp);
+      card.removeEventListener('pointercancel', onCancel);
+      card.style.transform = '';
+      card.classList.remove('lift');
+      list.classList.remove('reordering');
+      clearMarks();
+      try { card.releasePointerCapture(e.pointerId); } catch { /* already released */ }
+      if (lifted) {
+        // swallow the click this gesture fires (it dispatches synchronously
+        // after pointerup, before timers run), wherever it lands after re-render
+        suppressNextClick = true;
+        setTimeout(() => { suppressNextClick = false; }, 0);
+        if (commit && dropTo !== null) moveOpTo(page, index, dropTo);
+        else emit('sel'); // repaint even if nothing moved
+      }
+    }
+
+    const onUp = () => finish(true);
+    const onCancel = () => finish(false);
+    card.addEventListener('pointermove', onMove);
+    card.addEventListener('pointerup', onUp);
+    card.addEventListener('pointercancel', onCancel);
+  });
 }
 
 function opSummary(page, op) {
