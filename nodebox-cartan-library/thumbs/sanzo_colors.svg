@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-175.45 -144.23 350.91 408.47">
+<text x="-25.788" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 -57.78)">Golden Yellow</text>
+<text x="76.212" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 -57.78)">Antwarp Blue</text>
+<text x="180.216" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 -57.78)">Slate Color</text>
+<path d="M-150,-118.78 L-50,-118.78 L-50,-18.78 L-150,-18.78 Z" fill="rgba(243,162,87,1)"/>
+<path d="M-50,-118.78 L50,-118.78 L50,-18.78 L-50,-18.78 Z" fill="rgba(0,113,144,1)"/>
+<path d="M50,-118.78 L150,-118.78 L150,-18.78 L50,-18.78 Z" fill="rgba(52,69,76,1)"/>
+<text x="-13.34" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 64.74000000000001)">Orange</text>
+<text x="75.992" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 64.74000000000001)">Yellow Green</text>
+<text x="170.216" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 64.74000000000001)">Dark Tyrian Blue</text>
+<path d="M-150,3.74 L-50,3.74 L-50,103.74 L-150,103.74 Z" fill="rgba(243,116,32,1)"/>
+<path d="M-50,3.74 L50,3.74 L50,103.74 L-50,103.74 Z" fill="rgba(175,212,114,1)"/>
+<path d="M50,3.74 L150,3.74 L150,103.74 L50,103.74 Z" fill="rgba(18,53,78,1)"/>
+<text x="-28.012" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 187.26000000000002)">Hydrangea Red</text>
+<text x="71.544" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 187.26000000000002)">Sulphine Yellow</text>
+<text x="179.992" y="50" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="8" fill="rgba(38,38,38,1)" transform="matrix(1 0 0 1 -100 187.26000000000002)">Salvia Blue</text>
+<path d="M-150,126.26 L-50,126.26 L-50,226.26 L-150,226.26 Z" fill="rgba(169,65,81,1)"/>
+<path d="M-50,126.26 L50,126.26 L50,226.26 L-50,226.26 Z" fill="rgba(193,159,44,1)"/>
+<path d="M50,126.26 L150,126.26 L150,226.26 L50,226.26 Z" fill="rgba(151,172,200,1)"/>
+</svg>

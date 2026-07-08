@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-157.34 -128.72 314.69 357.44">
+<path d="M-134.624,-106 L124.672,-106 L124.672,6 L-134.624,6 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,1)" stroke-width="2"/>
+<path d="M-134.624,-106 L124.672,-106 L124.672,-90 L-134.624,-90 Z" fill="rgba(246,246,246,1)"/>
+<path d="M-134.624,-90 L124.672,-90 L124.672,-74 L-134.624,-74 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-134.624,-74 L124.672,-74 L124.672,-58 L-134.624,-58 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-134.624,-58 L124.672,-58 L124.672,-42 L-134.624,-42 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-134.624,-42 L124.672,-42 L124.672,-26 L-134.624,-26 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-134.624,-26 L124.672,-26 L124.672,-10 L-134.624,-10 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-134.624,-10 L124.672,-10 L124.672,6 L-134.624,6 Z" fill="rgba(243,246,250,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -95.45599999999999)">country</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -79.45599999999999)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -63.456)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -47.45600000000002)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -31.456000000000017)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 -15.456000000000003)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -118.62400000000001 0.5439999999999898)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -95.45599999999999)">month</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -79.45599999999999)">January</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -63.456)">February</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -47.45600000000002)">March</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -31.456000000000017)">January</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 -15.456000000000003)">February</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -55.1456 0.5439999999999898)">March</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -95.45599999999999)">average sales</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -79.45599999999999)">1164.607036462985</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -63.456)">1065.6000228133053</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -47.45600000000002)">944.9753954540938</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -31.456000000000017)">832.8912172699347</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 -15.456000000000003)">397.73497078567743</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 15.26400000000001 0.5439999999999898)">1084.2646126169711</text>
+<path d="M4.224,-106 L134.624,-106 L134.624,6 L4.224,6 Z" fill="rgba(0,202,255,0.22745098039215686)"/>
+<path d="M3.024,22 L3.024,54 L15.824,54 L-4.976,78 L-25.776,54 L-12.976,54 L-12.976,22 Z" fill="rgba(255,255,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-99.123,94 L89.171,94 L89.171,206 L-99.123,206 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,1)" stroke-width="2"/>
+<path d="M-99.123,94 L89.171,94 L89.171,110 L-99.123,110 Z" fill="rgba(246,246,246,1)"/>
+<path d="M-99.123,110 L89.171,110 L89.171,126 L-99.123,126 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-99.123,126 L89.171,126 L89.171,142 L-99.123,142 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-99.123,142 L89.171,142 L89.171,158 L-99.123,158 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-99.123,158 L89.171,158 L89.171,174 L-99.123,174 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-99.123,174 L89.171,174 L89.171,190 L-99.123,190 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-99.123,190 L89.171,190 L89.171,206 L-99.123,206 Z" fill="rgba(243,246,250,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 104.54400000000001)">country</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 120.54400000000001)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 136.544)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 152.544)">India</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 168.544)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 184.544)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -83.12320000000001 200.544)">Brazil</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 104.54400000000001)">month</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 120.54400000000001)">January</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 136.544)">February</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 152.544)">March</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 168.544)">January</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 184.544)">February</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 -19.64480000000001 200.544)">March</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 104.54400000000001)">sales</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 120.54400000000001)">1165</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 136.544)">1066</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 152.544)">945</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 168.544)">833</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 184.544)">398</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(0.8 0 0 0.8 50.76480000000001 200.544)">1084</text>
+</svg>

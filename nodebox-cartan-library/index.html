@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cartan Node Library · web port</title>
+    <meta
+      name="description"
+      content="John Cartan's Node Library 3.6 for NodeBox 3 — 191 community nodes converted to run on the unified web NodeBox engine, with live rendering in the browser."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./cartan.css" />
+  </head>
+  <body>
+    <main class="wide">
+      <header class="wrap">
+        <p class="crumbs"><a href="/">research</a> / nodebox-cartan-library</p>
+        <h1>The Cartan Node Library, on the web</h1>
+        <p>
+          <a href="https://www.cartania.com/nodebox.html">John Cartan</a>’s Node Library is the
+          largest community contribution to
+          <a href="https://nodebox.net/node/">NodeBox&nbsp;3</a> — 191 nodes for geometry, color,
+          text, math, lists, and data, built over a decade of daily practice. This experiment
+          ports version 3.6 to the
+          <a href="/nodebox/">unified web NodeBox engine</a>: the original
+          <code>.ndbx</code> document is converted to JSON, its Python and Clojure helper
+          functions are re-implemented in JavaScript, and every node’s original demo is
+          evaluated by the engine — offline for the thumbnails below, and live in your browser
+          when you open a node.
+        </p>
+        <p id="stats" class="muted"></p>
+        <p class="muted">
+          <a href="#about">How the port works ↓</a> ·
+          <a href="https://github.com/fdb/research/tree/main/nodebox-cartan-library"
+            >source &amp; conversion pipeline</a
+          >
+        </p>
+      </header>
+
+      <nav id="filter" class="wrap filter" aria-label="categories"></nav>
+      <div id="gallery"></div>
+
+      <section id="about" class="wrap about">
+        <hr />
+        <h2>About this port</h2>
+        <p>
+          Cartan’s library ships as one 188&nbsp;MB NodeBox&nbsp;3 document. Each of its nodes
+          is a <em>subnetwork</em> — a graph built from the ~130 standard NodeBox nodes plus a
+          handful of Python and Clojure helper functions. Because NodeBox files copy a
+          subnetwork wholesale every time it is reused, the document holds around 630,000 node
+          instances; only about 109,000 of them are canonical definitions, the rest are the
+          per-node demos you see as thumbnails above.
+        </p>
+        <p>The pipeline (see <code>tools/</code> and <code>doc/DECISIONS.md</code>):</p>
+        <ol>
+          <li>
+            <strong>Rebuild the NodeBox&nbsp;3 standard library in JavaScript.</strong> Port
+            metadata (names, defaults, menus) is generated from the official
+            <code>.ndbx</code> library files; the ~130 function bodies were ported by hand from
+            the Java and Jython sources (<code>engine/n3lib.js</code>). Path boolean operations
+            use a vendored <a href="https://github.com/velipso/polybooljs">polybooljs</a>;
+            text is drawn as native text with approximated Helvetica metrics instead of AWT
+            font outlines.
+          </li>
+          <li>
+            <strong>Convert the document.</strong> A parser resolves NodeBox’s
+            port-forwarding connections, sparse default names, and write-through published
+            ports into the unified engine’s JSON format — one file per node, demo included
+            when it fits a size budget.
+          </li>
+          <li>
+            <strong>Evaluate everything, headless.</strong> The same engine that runs in this
+            page runs under Node to execute all 191 demos and pre-render the SVG thumbnails.
+            186 nodes evaluate end-to-end; the five that don’t need a local filesystem,
+            installed fonts, or NodeBox application introspection — things a browser
+            deliberately can’t do.
+          </li>
+        </ol>
+        <h3>Could the Python nodes be ported to JavaScript automatically?</h3>
+        <p>
+          Mostly, yes — but not by a transpiler. The 19 helper scripts (17 Python, 2 Clojure)
+          are small (12 lines to ~200 lines) and lean on NodeBox’s Java classes
+          (<code>Path</code>, <code>Point</code>, AWT fonts, <code>ImageIO</code>), so
+          mechanical Python→JS translation (Transcrypt, Brython) would fail exactly where it
+          matters and drag a runtime along. What <em>is</em> automatic in 2026 is LLM
+          translation: each script was ported by AI against the original sources, with the
+          engine’s headless evaluation of all 191 demos as the referee. Thirteen ported
+          cleanly (poisson sampling, Perlin noise, treemaps, Hilbert curves, convex hulls,
+          date formatting…); the other six are impossible in a sandboxed browser by design
+          (directory listing, writing temp files, reading installed fonts, sampling local
+          images, app introspection) and are flagged
+          <span class="badge badge-unsupported">unsupported</span> above.
+        </p>
+        <h3>Fidelity notes</h3>
+        <ul>
+          <li>
+            Text nodes (<code>textpath</code> and everything built on it) draw native text
+            with approximate metrics, not font outlines — layouts are faithful, letterforms
+            are your system’s. Point-level access to glyph outlines degrades to the text’s
+            bounding box.
+          </li>
+          <li>
+            Random numbers are deterministic per seed but use a different generator than
+            Java’s — stochastic nodes produce the same <em>kind</em> of picture, not the same
+            picture.
+          </li>
+          <li>
+            Path booleans (<code>compound</code>) flatten curves before combining, like
+            Java’s <code>Area</code> on flattened paths.
+          </li>
+        </ul>
+        <p>
+          The Node Library is © John Cartan, “free for use without restrictions.” NodeBox is
+          by the Experimental Media Research Group, Sint Lucas Antwerpen; standard-library
+          metadata derives from the GPLv2
+          <a href="https://github.com/nodebox/nodebox">nodebox/nodebox</a> sources.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="detail">
+      <div class="detail-head">
+        <h2 id="detail-name"></h2>
+        <button id="detail-close" aria-label="close">×</button>
+      </div>
+      <p id="detail-desc" class="muted"></p>
+      <div class="detail-body">
+        <div class="detail-view">
+          <canvas id="detail-canvas" width="640" height="640"></canvas>
+          <div class="detail-controls">
+            <label id="frame-control"
+              >frame <input id="frame" type="range" min="1" max="200" value="1" step="1" />
+              <span id="frame-num">1</span></label
+            >
+            <button id="play">▶</button>
+            <a id="download-svg" download>SVG</a>
+          </div>
+          <p id="detail-status" class="muted"></p>
+        </div>
+        <div class="detail-info">
+          <table id="detail-ports"></table>
+          <p id="detail-comment" class="muted"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

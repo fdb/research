@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-97.85 -164.77 291.47 429.55">
+<text x="-8.001" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -48.251000000000005 -125.22999999999999)">-2</text>
+<text x="-15.507000000000001" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -55.757000000000005 -95.22999999999999)">-1.5</text>
+<text x="-8.001" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -48.251000000000005 -65.23)">-1</text>
+<text x="-15.507000000000001" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -55.757000000000005 -35.230000000000004)">-0.5</text>
+<text x="-5.0040000000000004" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -45.254000000000005 -5.22999999999999)">0</text>
+<text x="-12.51" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -52.760000000000005 24.77000000000001)">0.5</text>
+<text x="-5.0040000000000004" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -45.254000000000005 54.77000000000001)">1</text>
+<text x="-12.51" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -52.760000000000005 84.77000000000001)">1.5</text>
+<text x="-5.0040000000000004" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -45.254000000000005 114.77000000000001)">2</text>
+<text x="-12.51" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -52.760000000000005 144.77)">2.5</text>
+<text x="-5.0040000000000004" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -45.254000000000005 174.77)">3</text>
+<text x="-12.51" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -52.760000000000005 204.77)">3.5</text>
+<text x="-5.0040000000000004" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(95,95,95,1)" transform="matrix(1 0 0 1 -45.254000000000005 234.77)">4</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 -125.22999999999999)">%(.0f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 -95.22999999999999)">%(.0f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 -65.22999999999999)">%(.0f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 -35.22999999999999)">%(.1f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 -5.22999999999999)">%(.1f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 24.77000000000001)">%(.2f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 54.77000000000001)">%(.2f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 84.77000000000001)">%(.3f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 114.77000000000001)">%(.2f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 144.77)">%(.3f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 174.77)">%(.3f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 204.77)">%(.4f</text>
+<text x="-42.012" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(0,57,217,1)" transform="matrix(1 0 0 1 71.26400000000001 234.77)">%(.2f</text>
+<text x="67" y="-5" text-anchor="start" font-family="Verdana-Italic, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(253,0,0,1)">zero ignored</text>
+</svg>

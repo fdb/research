@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-386.49 -94.98 772.98 231.8">
+<path d="M50,0 C50,27.614 27.614,50 0,50 C-27.614,50 -50,27.614 -50,0 C-50,-27.614 -27.614,-50 0,-50 C27.614,-50 50,-27.614 50,0 Z" fill="rgba(0,0,0,1)"/>
+<text x="-341.508" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="24" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 0 87.28)">Seconds needed to draw a polygon with one million sides: 1.594</text>
+</svg>

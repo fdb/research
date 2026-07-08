@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-256.24 -155.07 512.48 414.13">
+<text x="-48.912" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -96.3021372067742 -100.03999999999999)">Apples</text>
+<text x="-63.152" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -110.5421372067742 -54.03999999999999)">Bananas</text>
+<text x="-72.928" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -120.3181372067742 -8.039999999999978)">Cantelope</text>
+<text x="-88.912" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -136.3021372067742 37.96000000000001)">Dragon Fruit</text>
+<text x="-63.152" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -110.5421372067742 83.96000000000001)">Eggplant</text>
+<text x="-30.224" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -77.6141372067742 129.96)">Figs</text>
+<text x="-52.464" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -99.8541372067742 175.96)">Grapes</text>
+<text x="-71.136" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="32" fill="rgba(81,81,81,1)" transform="matrix(1 0 0 1 -118.5261372067742 221.96)">Hazelnuts</text>
+<path d="M-33.39,-124.04 L214.482,-124.04 L214.482,-100.04 L-33.39,-100.04 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,-78.04 L95.753,-78.04 L95.753,-54.04 L-33.39,-54.04 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,-32.04 L225.214,-32.04 L225.214,-8.04 L-33.39,-8.04 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,13.96 L178.775,13.96 L178.775,37.96 L-33.39,37.96 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,59.96 L205.787,59.96 L205.787,83.96 L-33.39,83.96 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,105.96 L171.526,105.96 L171.526,129.96 L-33.39,129.96 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,151.96 L205.922,151.96 L205.922,175.96 L-33.39,175.96 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<path d="M-33.39,197.96 L119.383,197.96 L119.383,221.96 L-33.39,221.96 Z" fill="rgba(124,165,255,1)" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+</svg>

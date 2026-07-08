@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-97.81 -56.45 195.61 240.47">
+<path d="M-81.352,-40 L81.352,-40 L81.352,40 L-81.352,40 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,1)" stroke-width="2"/>
+<path d="M-81.352,-40 L81.352,-40 L81.352,-20 L-81.352,-20 Z" fill="rgba(246,246,246,1)"/>
+<path d="M-81.352,-20 L81.352,-20 L81.352,0 L-81.352,0 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-81.352,0 L81.352,0 L81.352,20 L-81.352,20 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-81.352,20 L81.352,20 L81.352,40 L-81.352,40 Z" fill="rgba(255,255,255,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -61.352 -26.82)">FRUIT</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -61.352 -6.82)">apple</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -61.352 13.18)">orange</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -61.352 33.18)">banana</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 18.68 -26.82)">COLOR</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 18.68 -6.82)">red</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 18.68 13.18)">orange</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 18.68 33.18)">yellow</text>
+<path d="M10,58 L10,90 L25,90 L0,135 L-25,90 L-10,90 L-10,58 Z" fill="none" stroke="rgba(0,0,0,1)" stroke-width="1"/>
+<text x="-59.208" y="163" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="24" fill="rgba(0,0,0,1)">"file saved"</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-260.82 -78.96 508.68 323.66">
+<path d="M-17.965,4.673 C-58.211,13.012 -67.041,34.352 -44.454,68.69" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-44.454,68.69 C-70.108,21.845 -108.365,6.577 -159.224,22.888" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-159.224,22.888 C-160.033,80.215 -133.185,117.768 -78.678,135.547" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-78.678,135.547 C-118.695,152.551 -125.955,178.663 -100.458,213.882" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-100.458,213.882 C-96.559,116.018 -124.99,28.679 -185.751,-48.137" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-185.751,-48.137 C-188.389,50.021 -158.825,137.266 -97.059,213.6" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<path d="M-97.059,213.6 C-38.897,155.995 -12.532,86.353 -17.965,4.673" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0.19215686274509805)" stroke-width="5"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="14" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 49)">Length:</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 65.86)">89.34</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 81.96000000000001)">136.39</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 98.06)">150.11</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 114.16000000000003)">99.21</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 130.26)">281.70</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 146.36)">282.48</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -230 162.45999999999998)">230.91</text>
+<path d="M217.035,4.673 L190.546,68.69 L75.776,22.888 L156.322,135.547 L134.542,213.882 L49.249,-48.137 L137.941,213.6 L217.035,4.673 Z" fill="rgba(0,0,0,0)" stroke="rgba(255,0,0,0.19215686274509805)" stroke-width="5"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="14" fill="rgba(255,49,49,1)" transform="matrix(1 0 0 1 4 49)">Length:</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="10" fill="rgba(255,49,49,1)" transform="matrix(1 0 0 1 4 65.86)">1187.96</text>
+</svg>

@@ -1,0 +1,186 @@
+Node,Type,Description
+add_arrow,alteration,Add arrows to the end(s) of an open path or midpoints of a shape
+add_unicode,text,Replace U+code with unicode characters in a string - REQUIRES UNICODE.PY
+adjust_fill,color,Change individual fill color properties for a set of objects
+adjust_point,alteration,Adjust a point within a path - REQUIRES contours.py ONLY if path has contours
+align_labels,text,Align a column of labels
+align_nums,text,Align and format a column of numbers centered on their decimal points
+alt_grid,point,Create grid with options for alternating indents and zigzagging
+angle_field,math,Computes the direction from points to the nearest part of a shape
+apply_color,color,"Change a shape's fill, stroke, and strokeWidth based on a reference object"
+apply_ramp,animation,Use a curve as a ramp to change values during an animation
+arc_measure,math,Returns degrees between start and end angles
+arc_wave,geometry,Wrap sine waves along an arc
+arccos,math,Given value between -1 and 1 returns arccosine in radians or degrees
+area,math,Returns area of a closed polygon
+arrange,alteration,Arrange objects in tidy stacks
+arrow,geometry,Draws an arrow with many style options
+attraction,math,Computes normalized minimum distance from points to a shape
+average,math,"Given a list of numbers returns mean, median, mode(s), or mid-range"
+balloons,geometry,"Draws a bunch of balloons, colored randomly if no colors are supplied"
+blend_color,color,Blend a translucent foreground with a solid background
+bound_box,geometry,Create a bounding rect around an object
+bounds,math,Constrain values within upper and/or lower bounds
+branches,geometry,Divide a container into regions using an organic branching pattern
+canvas,geometry,Returns a white rectangle with width and height of current canvas - REQUIRES CANVAS.PY
+change_col,data,Replace a column with modified data or add new one
+change_color,color,Change individual color properties for a set of colors
+charpath,text,Create separate textpaths for each character in a text
+circle_circle,point,Finds intersections between two circles
+clean,alteration,Removes duplicate consecutive points in a path - fixes some artifacts in PNG exports
+clip,alteration,Clips to boundary restoring fill and stroke colorization
+clockwise,other,Returns true if points in a path are in clockwise order
+color_brewer,color,Choose a color palette based on the Color Brewer system
+colors,color,Returns a range of colors
+combos,other,Generate a list of all possible ways to choose k items from a set of n elements
+complement,color,Create complementary colors
+concat_list,list,Concatenates a list of strings into a single string - REQUIRES CONCAT_LIST.PY
+contours,alteration,Separates path into distinct contours
+contrast,color,Set fill color of a shape for contrast against a dark or light background
+convert_base,math,Convert value from one base to another - REQUIRES CONVERT_BASE.PY
+convert_date,other,Converts dates using Java SimpleDateFormat - REQUIRES DATEFORMAT.CLJ
+corner,point,Returns a corner or midpoint in the boundary of a shape
+crossings,point,Finds points where linear paths join or cross
+curve,geometry,Draws quadratic curve with two control points
+dashed_line,geometry,Create a dashed line
+dec_to_bin,math,Convert decimal to binary up to 32 bits
+diamonds,geometry,Create a grid of diamonds
+diff_list,list,"Given lists A and B, returns items in A but not B, B but not A, or in both"
+diff_table,data,"Given tables A and B, returns rows with items in A but not B, B but not A, or both A and B"
+dilute,color,Dilutes a color in a variety of ways
+distinct_pts,point,Remove duplicate points within a given closeness
+distribution,data,"Makes distribution table from a source table, key, and range of possible values"
+divide_safe,math,Divides without division by zero error
+donut,geometry,"Create a donut, pie, or stacked bar chart"
+draw_points,alteration,Draw a path's blue endpoints and red control points
+draw_table,text,Draw a table similar to the data view of the input table
+drop_cols,data,Drop or keep a subset of columns
+drop_last,list,Take all but the last item of a list
+easing,animation,Applies selected easing function to produce changing values over time
+even_sample,alteration,"Distribute points evenly across entire path, curves only, or joints only"
+explode,alteration,Explodes path into individual lines and curves
+exponential,animation,Change values over time at an exponential rate
+factorial,math,Calculate exact value of n! as a string up to n=170
+fade,animation,Adjust alpha (0 to 100) of shapes or geometries
+fancy_star,geometry,Create a well proportioned star shape with coloring options
+fast_gradient,color,Apply a simple linear gradient based on one color
+find_arc,geometry,Finds an arc between two points
+find_item,list,Returns all indices where target occurs in a source list
+find_radius,math,Finds radius of a polygon with a given side length
+find_substr,list,Returns all indices of target substring within source string
+find_T,math,Find the T percentage in a path closest to a given point
+fit_curve,alteration,Finds a curve that passes through all points in a path
+fit_true,alteration,Fit a shape within bounds without distorting stroke widths
+font_table,text,Returns a table of system fonts - REQUIRES FONT_TABLE.PY
+fragments,geometry,Returns shapes arising in the spaces between overlapping shapes
+gear,geometry,"Create an adjustable, working gear"
+good_center,point,Find a reasonable center point inside a shape
+gradient_L,color,Apply a linear color gradient to a shape or path
+gradient_R,color,Apply a radial color gradient to a shape or path
+gradual,math,Create a list of numbers that gradually change
+grid_plus,point,Create a grid of points sized by cell width and height with options for a limit and different orders
+halton_scat,point,Scatter points within the boundaries of a shape using the Halton Sequence
+hcl_color,color,Create an HCL color
+hexagons,geometry,Create a grid of hexgons
+hilbert,geometry,Create a Hilbert-like curve filling a rectangular area - REQUIRES GILBERT2D.PY
+identify,other,Returns a Nodebox-friendly class identity for a given item
+image,geometry,Opens an image file and returns sample or masked portion as a pixel group - REQUIRES IMAGE.PY
+indices,list,Returns a list of indices to enumerate items in the input list
+inscribe,alteration,Inscribe a shape centered inside another shape
+int_part,other,Generate a list of all possible ways of writing n as the sum of positive integers
+inter_color,color,Return intermediate shade between two colors
+intrsct_circle,point,Finds intersections between a line and an ellipse
+intrsct_curve,point,Finds intersections between a line and a cubic bezier curve
+intrsct_line,point,Finds intersection between two lines
+intrsct_path,point,Finds intersections between a line and a path
+is_closed,other,Returns true if path is closed; paths with multiple contours treated as closed
+iso_paper,geometry,Create adjustable isometric grid paper
+join,alteration,Join a list of paths into a single seamless path
+join_contours,alteration,Join contours into a single path - REQUIRES CONTOURS.PY
+kern,text,Creates a kerned text path
+key_table,other,Display a table showing valid keys and sub-keys
+labelmaker,text,Place and render consistently sized labels inside a common shape
+line_break,text,Insert line breaks into a string using a specified separator
+list_files,list,Given folder path returns top level files in that folder - REQUIRES LIST_DIR.PY
+list_folders,list,Given folder path returns top level subfolders - REQUIRES LIST_DIR.PY
+luma,color,Converts a color to a luma value between 0 and 1
+luma_colors,color,Generate random colors matching a specifed luma value
+mask,alteration,Returns segments of path inside or outside mask
+merge_table,data,Merges two tables
+mesh,geometry,Create line segments connecting neighboring points
+metaballs,geometry,Returns shapes arising from unions of overlapping shapes
+mix,list,Mix multiple lists into one
+morph_color,color,"Gradually change a shape's fill, strokeColor, and strokeWidth based on a reference object"
+multi_list,list,Combine up to 7 lists into a multi-list
+n_choose_k,math,Calculate binomial coefficient n choose k
+node_card,other,Creates specification card for each NodeBox node - REQUIRES NODELIST.PY
+noise,math,Generate Perlin noise value from -1 to 1 - REQUIRES NOISE.CLJ
+occlude,alteration,Create plottable paths from overlapping shapes in increasing Z order
+order_LRTB,point,"Order points or shapes left to right, top to bottom"
+orderings,other,Generate a list of all possible ways to order up to 7 items
+outer_points,point,Returns the points which form a boundary enclosing the rest - REQUIRES CONVEX_HULL.PY
+overlaps,alteration,Return all possible intersections of up to ten overlapping shapes
+palette,color,Expand and tune a palette of colors
+parabola,geometry,Create parabola curve for y = Ax^2 + Bx + C for x between X1 and X2
+partitions,other,Generate a list of all possible partitions of a set with n elements
+percentage,math,Returns percentage as number or formatted string
+pixelate,alteration,Turn a vector path or shape into an array of square pixels
+place_label,text,Size and place a text label inside an arbitrary shape
+point_in_path,point,Calculate a point between beginning and end of a path
+poly_labels,text,Label the interior angles and sides of a polygon
+precision,math,Rounds a floating point number to a given precision
+primes,math,Generate a list of prime numbers up to a given limit
+products,math,Generate the final or running products of a list of numbers
+push_pull,alteration,Moves a subset of path's control points to alter its shape
+quadtree,data,Create a quadtree to sort points into a heirarchy of tiles and sub-tiles
+ramp_curve,geometry,Create a curve which can be used as a ramp
+rearrange,animation,Move a list of points or shapes to a list of target positions over time
+rel_change,point,"Given start point A and end point B returns B-A, the point needed to translate A to B"
+relation,other,Returns spatial relationship between two closed shapes
+redo_contour,alteration,Assemble up to 6 contours into a single path
+reorder,list,Reorder a list of up to 7 items
+resamp_curv,alteration,Remove curves from a path or short textpath with up to 6 contours
+reshape,animation,Gradually reshape one polyline path into another
+rev_dir,alteration,Reverse direction of a complex path
+running_start,math,A running total that starts with the first value
+sanzo_colors,color,A Dictionary of Color Combinations by Sanzo Wada
+scale_true,alteration,Resize both shape and sttokeWidth
+scatter_bias,point,Generate a biased distribution of points within a shape
+scatter_even,point,Generate evenly spaced points within a rectangular area - REQUIRES POISSON.PY
+secs,math,Returns clock time in seconds since last call; use trigger to measure elapsed time - REQUIRES TIME.PY
+seg_display,text,Display numbers and hex values as a seven-segment display
+set_type,point,"Create a point of type 1, 2, or 3"
+settle,animation,Calculate values for a decaying sine wave
+sign,math,"Return the sign of a number (-1, 0, or 1)"
+signed_dist,math,Computes signed distance from points to a shape
+soften,alteration,Soften the corners of a path
+sort_colors,color,"Sort colors by luma, hue, saturation, or brightness"
+spiral,geometry,Draws different types of spirals
+stack2D,alteration,Arrange shapes in a two-dimensional grid
+stack_tight,alteration,Arrange shapes tightly together in horizonatal or vertical stacks
+style_text,text,Convert markup text into a list of styled word paths
+sub_path,alteration,Returns a portion of a complex path between two positions (0 to 100)
+sum_cols,data,Make summary table categorized by row with totals across multiple existing columns
+summarize,data,Make summary table with totals categorized by row and optionally partitioned into columns
+surround,geometry,Create a ring of equal-sized circles that surround a given circle
+symbol,geometry,"Create a heart, spade, diamond, club or other common symbol"
+take_sample,list,Return an evenly distributed subset from a list
+tangent,math,Returns precise tangent angle at any position (0 to 100) along a path
+text_circle,text,Create a text path centered above or below a circle
+text_svg,text,Creates a kerned text path based on SVG fonts - REQUIRES hersheyFont.svg
+this_or_that,list,"If which is 0 choose this, if which is 1 choose that"
+time,math,"Returns local date, time, and day as list - REQUIRES TIME.PY"
+trajectory,geometry,"Create a trajectory curve for a projectile with given angle, velocity, height, and gravity"
+transpose,data,Turn a set of columns into a new dimension
+treemap,geometry,"Given list of values and bounding rect, returns a treemap at position of rect - REQUIRES TREEMAP.PY"
+triangle,geometry,"Create a triangle by supplying three values, including at least one side"
+true_arc,text,Creates an directionally correct arc path for text to follow
+true_center,point,"Calculate the true center of a triangle, reuleaux triangle, regular polygon, star, or fancy star"
+true_spoke,text,Corrects text direction for text on a spoke path
+turtle_drive,animation,Move a pointer around a polyline path
+unwind,animation,Unwind a polyline path into a line or segmented curve
+waveform,geometry,Create four types of waves
+werner_color,color,Werner's Nomenclature of Colours by P. Syme
+wind_letters,text,Winds letters around a spiral
+wordpath,text,Create separate textpaths for each word in a text
+write_table,data,"When triggered writes table to csv file and returns ""file saved"" - REQUIRES WRITE_TABLE.PY"

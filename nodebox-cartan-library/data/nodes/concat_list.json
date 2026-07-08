@@ -1,0 +1,1 @@
+{"name":"concat_list","category":"list","description":"Concatenates a list of strings into a single string - REQUIRES CONCAT_LIST.PY","comment":"concatenates a list of strings into a single string - REQUIRES CONCAT_LIST.PY","fns":["concat_list/concat"],"files":[],"node":{"name":"concat_list","type":"cartanfn.concat_list.concat","values":{"list":"","delimiter":" "}},"demo":null}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-201.24 -36.05 402.47 72.1">
+<text x="-70.044" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="24" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -106.05999999999999 6.359999999999999)">That is a &lt;b&gt;</text>
+<text x="-22.68" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="24" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 -9.335999999999999 6.359999999999999)">bold</text>
+<text x="-79.38" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="24" fill="rgba(0,0,0,1)" transform="matrix(1 0 0 1 96.724 6.359999999999999)">&lt;/b&gt; assertion!</text>
+</svg>

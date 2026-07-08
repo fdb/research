@@ -1,0 +1,1917 @@
+[
+ {
+  "name": "add_arrow",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 171786,
+  "demoBytes": 689647,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "add_unicode",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 20131,
+  "demoBytes": 76690,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "adjust_fill",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12471,
+  "demoBytes": 158348,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "adjust_point",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 111069,
+  "demoBytes": 3293772,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "align_labels",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 10073,
+  "demoBytes": 12008,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "align_nums",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 22623,
+  "demoBytes": 38205,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "alt_grid",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12007,
+  "demoBytes": 17932,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "angle_field",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8342,
+  "demoBytes": 18522,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "apply_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 4330,
+  "demoBytes": 37667,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "apply_ramp",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 40458,
+  "demoBytes": 77511,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "arc_measure",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3266,
+  "demoBytes": 16848,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "arc_wave",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8963,
+  "demoBytes": 37243,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "arccos",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1405,
+  "demoBytes": 16621,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "area",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1596,
+  "demoBytes": 4736,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "arrange",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 29307,
+  "demoBytes": 226480,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "arrow",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 9307,
+  "demoBytes": 57583,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "attraction",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3877,
+  "demoBytes": 4865,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "average",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5246,
+  "demoBytes": 37348,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "balloons",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 957910,
+  "demoBytes": 2743275,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "blend_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 169155,
+  "demoBytes": 548633,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "bound_box",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2070,
+  "demoBytes": 961138,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "bounds",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2151,
+  "demoBytes": 4597,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "branches",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1165661,
+  "demoBytes": 4036730,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "canvas",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 49,
+  "demoBytes": 3113,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "change_col",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 23836,
+  "demoBytes": 58042,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "change_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3430,
+  "demoBytes": 32817,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "charpath",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 79108,
+  "demoBytes": 996622,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "circle_circle",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 13397,
+  "demoBytes": 15338,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "clean",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5923,
+  "demoBytes": 8114,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "clip",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 108620,
+  "demoBytes": 120230,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "clockwise",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1530,
+  "demoBytes": 4516,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "color_brewer",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 48173,
+  "demoBytes": 48529,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "colors",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12896,
+  "demoBytes": 18298,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "combos",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 30964,
+  "demoBytes": 129467,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "complement",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 767498,
+  "demoBytes": 4582911,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "concat_list",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 96,
+  "demoBytes": 606930,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "contours",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3988,
+  "demoBytes": 4772,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "contrast",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12213,
+  "demoBytes": 255021,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "convert_base",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5329,
+  "demoBytes": 19301,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "convert_date",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 145,
+  "demoBytes": 3346,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "corner",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3303,
+  "demoBytes": 4610,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "crossings",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 161520,
+  "demoBytes": 401559,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "curve",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2406,
+  "demoBytes": 3234,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "dashed_line",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 76142,
+  "demoBytes": 76892,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "dec_to_bin",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 83274,
+  "demoBytes": 122297,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "diamonds",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 14728,
+  "demoBytes": 15073,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "diff_list",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3321,
+  "demoBytes": 66297,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "diff_table",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3388,
+  "demoBytes": 66067,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "dilute",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 355598,
+  "demoBytes": 1427155,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "dintinct_pts",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 0,
+  "demoBytes": 811185,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "distinct_pts",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 4609,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "distribution",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1375,
+  "demoBytes": 18555,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "divide_safe",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2042,
+  "demoBytes": 5550,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "donut",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 15338,
+  "demoBytes": 71689,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "draw_points",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 823434,
+  "demoBytes": 1841293,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "draw_table",
+  "status": "ok",
+  "drawables": 36,
+  "results": 36,
+  "nodeBytes": 371989,
+  "demoBytes": 466024,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "drop_cols",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5271,
+  "demoBytes": 38852,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "drop_last",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 471,
+  "demoBytes": 22356,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "easing",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 64156,
+  "demoBytes": 801819,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "even_sample",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 111921,
+  "demoBytes": 322848,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "explode",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 11242,
+  "demoBytes": 17352,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "exponential",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5729,
+  "demoBytes": 7180,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "factorial",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 638739,
+  "demoBytes": 660186,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "fade",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 4879,
+  "demoBytes": 11809,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "fancy_star",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 96265,
+  "demoBytes": 886064,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "fast_gradient",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 938649,
+  "demoBytes": 1878019,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "find_arc",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 28451,
+  "demoBytes": 548974,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "find_item",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1506,
+  "demoBytes": 6203,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "find_radius",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1045,
+  "demoBytes": 1623,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "find_substr",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2194,
+  "demoBytes": 6292,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "find_T",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 4042,
+  "demoBytes": 611517,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "fit_curve",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 30064,
+  "demoBytes": 30698,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "fit_true",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 19015,
+  "demoBytes": 30342,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "font_table",
+  "status": "error",
+  "error": "/font_table/font_table: font introspection is not supported in the web port",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 94387,
+  "demoBytes": 123737,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "fragments",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 7615,
+  "demoBytes": 17896,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "gear",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 114787,
+  "demoBytes": 700006,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "good_center",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8279,
+  "demoBytes": 303430,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "gradient_L",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 862042,
+  "demoBytes": 2684206,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "gradient_R",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 938702,
+  "demoBytes": 2914187,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "gradual",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 6019,
+  "demoBytes": 14113,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "grid_plus",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5755,
+  "demoBytes": 7626,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "halton_scat",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 13656,
+  "demoBytes": 17611,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "hcl_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 31158,
+  "demoBytes": 35108,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "hexagons",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 23559,
+  "demoBytes": 116813,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "hilbert",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3183,
+  "demoBytes": 14844,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "identify",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 17420,
+  "demoBytes": 3512404,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "image",
+  "status": "error",
+  "error": "/image/photo_bounds: image sampling is not supported in the web port",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 52898,
+  "demoBytes": 80105,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "indices",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1198,
+  "demoBytes": 23090,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "inscribe",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 183980,
+  "demoBytes": 391759,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "int_part",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 102224,
+  "demoBytes": 116131,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "inter_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 164870,
+  "demoBytes": 499401,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "intrsct_circle",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 45307,
+  "demoBytes": 46815,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "intrsct_curve",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 45273,
+  "demoBytes": 48752,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "intrsct_line",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 18629,
+  "demoBytes": 19686,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "intrsct_path",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 88377,
+  "demoBytes": 89803,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "is_closed",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5085,
+  "demoBytes": 11883,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "is_closed1",
+  "status": "ok",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 5086,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "iso_paper",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 119584,
+  "demoBytes": 13445928,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "join",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 14861,
+  "demoBytes": 19525,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "join_contour",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 0,
+  "demoBytes": 8343,
+  "shipNode": false,
+  "shipDemo": true
+ },
+ {
+  "name": "join_contours",
+  "status": "ok",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 2821,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "kern",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 24591,
+  "demoBytes": 51866,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "key_table",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 40538,
+  "demoBytes": 1740124,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "labelmaker",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 169104,
+  "demoBytes": 244448,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "line_break",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 824,
+  "demoBytes": 1338,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "list_files",
+  "status": "error",
+  "error": "/list_files: directory listing is not supported in the web port",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 93,
+  "demoBytes": 11872,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "list_folders",
+  "status": "error",
+  "error": "/list_folders: directory listing is not supported in the web port",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 98,
+  "demoBytes": 23749,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "luma",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 5536,
+  "demoBytes": 47888,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "luma_colors",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 101530,
+  "demoBytes": 427859,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "mask",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 112201,
+  "demoBytes": 227012,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "merge_table",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2074,
+  "demoBytes": 39930,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "mesh",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12219,
+  "demoBytes": 13497,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "metaballs",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8230,
+  "demoBytes": 14174,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "mix",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 26704,
+  "demoBytes": 254449,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "morph_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 335292,
+  "demoBytes": 919807,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "multi_list",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 33201,
+  "demoBytes": 338743,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "n_choose_k",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 169900,
+  "demoBytes": 173861,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "node_card",
+  "status": "error",
+  "error": "/node_card1/node_table/node_list: NodeBox application introspection is not supported in the web port",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 37729,
+  "demoBytes": 114616,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "noise",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1500,
+  "demoBytes": 8987,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "occlude",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 114548,
+  "demoBytes": 127099,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "order_LRTB",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8450,
+  "demoBytes": 31032,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "orderings",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 49880,
+  "demoBytes": 173301,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "outer_points",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 101,
+  "demoBytes": 974,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "overlaps",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 190442,
+  "demoBytes": 513301,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "palette",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 836662,
+  "demoBytes": 1679867,
+  "shipNode": false,
+  "shipDemo": false
+ },
+ {
+  "name": "parabola",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 45860,
+  "demoBytes": 47180,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "partitions",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 31976,
+  "demoBytes": 289983,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "percentage",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 4515,
+  "demoBytes": 6809,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "pixelate",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 497601,
+  "demoBytes": 631261,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "place_label",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 239871,
+  "demoBytes": 274157,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "point_in_path",
+  "status": "ok",
+  "drawables": 0,
+  "results": 0,
+  "nodeBytes": 1143,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "point_in_pth",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 0,
+  "demoBytes": 4715,
+  "shipNode": false,
+  "shipDemo": true
+ },
+ {
+  "name": "poly_labels",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 270789,
+  "demoBytes": 271641,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "precision",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1710,
+  "demoBytes": 5015,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "primes",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2911,
+  "demoBytes": 7821,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "products",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 12752,
+  "demoBytes": 49211,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "push_pull",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 39049,
+  "demoBytes": 39865,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "quadtree",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 131485,
+  "demoBytes": 275242,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "ramp_curve",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 34867,
+  "demoBytes": 35419,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "rearrange",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3384,
+  "demoBytes": 5590,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "redo_contour",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 65018,
+  "demoBytes": 115352,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "rel_change",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1401,
+  "demoBytes": 12193,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "relation",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 7883,
+  "demoBytes": 11643,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "reorder",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 55492,
+  "demoBytes": 1109910,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "resamp_curv",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 94314,
+  "demoBytes": 1782268,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "reshape",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 370799,
+  "demoBytes": 407280,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "rev_dir",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 34993,
+  "demoBytes": 209123,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "running_start",
+  "status": "ok",
+  "drawables": 0,
+  "results": 1,
+  "nodeBytes": 1376,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "running_strt",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 0,
+  "demoBytes": 13564,
+  "shipNode": false,
+  "shipDemo": true
+ },
+ {
+  "name": "sanzo_colors",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 52807,
+  "demoBytes": 53523,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "scale_true",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 7514,
+  "demoBytes": 10031,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "scatter_bias",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 10321,
+  "demoBytes": 11020,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "scatter_even",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 117,
+  "demoBytes": 3813,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "secs",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 68,
+  "demoBytes": 1446,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "seg_display",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 15465,
+  "demoBytes": 15666,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "set_type",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3579,
+  "demoBytes": 836839,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "settle",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 14661,
+  "demoBytes": 117078,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "sign",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 1090,
+  "demoBytes": 59185,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "signed_dist",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 57233,
+  "demoBytes": 153525,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "soften",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 17859,
+  "demoBytes": 73694,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "sort_colors",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 8341,
+  "demoBytes": 3714364,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "spiral",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 117848,
+  "demoBytes": 842762,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "stack_tight",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 18930,
+  "demoBytes": 144603,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "stack2D",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 10765,
+  "demoBytes": 40840,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "style_text",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 31801,
+  "demoBytes": 63071,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "sub_path",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 68192,
+  "demoBytes": 85663,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "sum_cols",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 38280,
+  "demoBytes": 128740,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "summarize",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 45634,
+  "demoBytes": 431006,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "surround",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3018,
+  "demoBytes": 4147,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "symbol",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 186753,
+  "demoBytes": 561464,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "take_sample",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2001,
+  "demoBytes": 386516,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "tangent",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 10773,
+  "demoBytes": 24917,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "text_circle",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 28299,
+  "demoBytes": 57729,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "text_svg",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 26146,
+  "demoBytes": 106420,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "this_or_that",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 630,
+  "demoBytes": 3723,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "time",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 48,
+  "demoBytes": 13870,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "trajectory",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 51401,
+  "demoBytes": 61800,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "transpose",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 13198,
+  "demoBytes": 47574,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "treemap",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3382,
+  "demoBytes": 8792,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "triangle",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 324094,
+  "demoBytes": 420691,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "true_arc",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2729,
+  "demoBytes": 9121,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "true_center",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 65813,
+  "demoBytes": 368728,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "true_spoke",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 2838,
+  "demoBytes": 3518,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "turtle_drive",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 34349,
+  "demoBytes": 35271,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "unwind",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 24653,
+  "demoBytes": 44678,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "wave_form",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 0,
+  "demoBytes": 186372,
+  "shipNode": false,
+  "shipDemo": true
+ },
+ {
+  "name": "waveform",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 185879,
+  "demoBytes": 0,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "werner_color",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 21714,
+  "demoBytes": 428666,
+  "shipNode": true,
+  "shipDemo": false
+ },
+ {
+  "name": "wind_letters",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 9021,
+  "demoBytes": 255874,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "wordpath",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 82859,
+  "demoBytes": 137772,
+  "shipNode": true,
+  "shipDemo": true
+ },
+ {
+  "name": "write_table",
+  "status": "ok",
+  "drawables": 1,
+  "results": 1,
+  "nodeBytes": 3531,
+  "demoBytes": 21499,
+  "shipNode": true,
+  "shipDemo": true
+ }
+]

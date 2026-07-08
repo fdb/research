@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200.17 -130.17 403.19 400.34">
+<path d="M140,70 C140,147.32 77.32,210 0,210 C-77.32,210 -140,147.32 -140,70 C-140,-7.32 -77.32,-70 0,-70 C77.32,-70 140,-7.32 140,70 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,88,233,1)" stroke-width="3"/>
+<path d="M61.819,90.086 C66.18,76.662 66.054,62.184 61.459,48.838 C56.863,35.492 48.049,24.005 36.348,16.113 C24.646,8.22 10.693,4.35 -3.402,5.089 C-17.497,5.828 -30.969,11.134 -41.781,20.207" fill="rgba(0,0,0,0)" stroke="rgba(0,88,233,1)" stroke-width="3"/>
+<path d="M0,70 L133.148,113.262" fill="rgba(0,0,0,0)" stroke="rgba(0,88,233,1)" stroke-width="3"/>
+<path d="M0,70 L-89.99,-37.246" fill="rgba(0,0,0,0)" stroke="rgba(0,88,233,1)" stroke-width="3"/>
+<path d="M-30.876,11.428 L-27.741,15.323 L-39.444,18.326 L-34.011,7.533 L-30.876,11.428 Z" fill="rgba(0,88,233,1)" stroke="rgba(0,88,233,1)" stroke-width="4"/>
+<path d="M-175,70 L175,70" fill="rgba(0,0,0,1)" stroke="rgba(0,88,204,1)" stroke-width="1"/>
+<path d="M0,-105 L0,245" fill="rgba(0,0,0,1)" stroke="rgba(0,88,204,1)" stroke-width="1"/>
+<text x="1.990000000000002" y="-4" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(253,0,0,1)" transform="matrix(1 0 0 1 0 70)">-148°</text>
+<text x="143.60855125388093" y="52.22387204936611" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(0,88,204,1)" transform="matrix(1 0 0 1 0 70)">18°</text>
+<text x="-127.57044233047321" y="-121.03502201279852" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(0,88,204,1)" transform="matrix(1 0 0 1 0 70)">-130°</text>
+</svg>

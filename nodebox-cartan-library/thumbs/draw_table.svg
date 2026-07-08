@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-253.91 -128.78 507.82 257.55">
+<path d="M-223.132,-98 L223.132,-98 L223.132,98 L-223.132,98 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,1)" stroke-width="2.8"/>
+<path d="M-223.132,-98 L223.132,-98 L223.132,-70 L-223.132,-70 Z" fill="rgba(246,246,246,1)"/>
+<path d="M-223.132,-70 L223.132,-70 L223.132,-42 L-223.132,-42 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-223.132,-42 L223.132,-42 L223.132,-14 L-223.132,-14 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-223.132,-14 L223.132,-14 L223.132,14 L-223.132,14 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-223.132,14 L223.132,14 L223.132,42 L-223.132,42 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-223.132,42 L223.132,42 L223.132,70 L-223.132,70 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-223.132,70 L223.132,70 L223.132,98 L-223.132,98 Z" fill="rgba(243,246,250,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 -78.904)">name</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 -50.903999999999996)">Triangle</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 -22.903999999999996)">Square</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 5.096)">Pentagon</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 33.096)">Hexagon</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 61.096)">Heptagon</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -195.13200000000003 89.09599999999998)">Octogon</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 -78.904)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 -50.903999999999996)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 -22.903999999999996)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 5.096)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 33.096)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 61.096)">sides</text>
+<text x="-14.004000000000001" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 -46.68160000000001 89.09599999999998)">sides</text>
+<text x="-12.006" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 56.946399999999976 -78.904)">area</text>
+<text x="-30.023999999999997" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 80.29839999999999 -50.903999999999996)">64.95</text>
+<text x="-20.016" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.4 0 0 1.4 56.946399999999976 -22.903999999999996)">100</text>
+<text x="-36.696" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 80.29839999999999 5.096)">118.88</text>
+<text x="-30.023999999999997" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 70.95759999999999 33.096)">129.9</text>
+<text x="-36.696" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 80.29839999999999 61.096)">136.82</text>
+<text x="-36.696" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 80.29839999999999 89.09599999999998)">141.42</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.4 0 0 1.4 136.29840000000002 -78.904)">polygon</text>
+<path d="M177.031,-46.704 L154.399,-46.704 L165.715,-66.304 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="1.1087434329003196"/>
+<path d="M175.515,-18.704 L155.915,-18.704 L155.915,-38.304 L175.515,-38.304 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="1.176"/>
+<path d="M172.084,9.296 L159.347,9.296 L155.411,-2.817 L165.715,-10.304 L176.02,-2.817 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="0.9193474436821982"/>
+<path d="M171.373,37.296 L160.057,37.296 L154.399,27.496 L160.057,17.696 L171.373,17.696 L177.031,27.496 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="0.9601999791722514"/>
+<path d="M170.189,65.296 L161.242,65.296 L155.663,58.301 L157.654,49.578 L165.715,45.696 L173.776,49.578 L175.767,58.301 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="0.8748776360466131"/>
+<path d="M169.774,93.296 L161.656,93.296 L155.915,87.555 L155.915,79.437 L161.656,73.696 L169.774,73.696 L175.515,79.437 L175.515,87.555 Z" fill="rgba(239,176,233,1)" stroke="rgba(0,0,0,1)" stroke-width="0.9000714329201949"/>
+</svg>

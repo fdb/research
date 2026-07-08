@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-219.49 -83.8 438.98 317.6">
+<path d="M-147.6,-16.71 L-147.6,-56.71 L-192.4,-56.71 L-192.4,-16.71 L-185.4,-16.71 L-185.4,-49.71 L-179.8,-49.71 L-179.8,-16.71 L-172.8,-16.71 L-172.8,-49.71 L-167.2,-49.71 L-167.2,-16.71 L-160.2,-16.71 L-160.2,-49.71 L-154.6,-49.71 L-154.6,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-75.2,-16.71 L-75.2,-56.71 L-107.4,-56.71 L-107.4,-16.71 L-100.4,-16.71 L-100.4,-49.71 L-94.8,-49.71 L-94.8,-16.71 L-87.8,-16.71 L-87.8,-49.71 L-82.2,-49.71 L-82.2,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-62.6,-16.71 L-62.6,-56.71 L-69.6,-56.71 L-69.6,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-2.8,-16.71 L-2.8,-56.71 L-22.4,-56.71 L-22.4,-16.71 L-15.4,-16.71 L-15.4,-49.71 L-9.8,-49.71 L-9.8,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M22.4,-16.71 L22.4,-56.71 L2.8,-56.71 L2.8,-16.71 L9.8,-16.71 L9.8,-49.71 L15.4,-49.71 L15.4,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M82.2,-16.71 L82.2,-56.71 L62.6,-56.71 L62.6,-16.71 L69.6,-16.71 L69.6,-49.71 L75.2,-49.71 L75.2,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M94.8,-16.71 L94.8,-56.71 L87.8,-56.71 L87.8,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M107.4,-16.71 L107.4,-56.71 L100.4,-56.71 L100.4,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M192.4,-16.71 L192.4,-56.71 L147.6,-56.71 L147.6,-16.71 L154.6,-16.71 L154.6,-49.71 L160.2,-49.71 L160.2,-16.71 L167.2,-16.71 L167.2,-49.71 L185.4,-49.71 L185.4,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M179.8,-16.71 L179.8,-44.11 L172.8,-44.11 L172.8,-16.71 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-147.6,83.29 L-147.6,43.29 L-192.4,43.29 L-192.4,83.29 L-185.4,83.29 L-185.4,50.29 L-154.6,50.29 L-154.6,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-160.2,83.29 L-160.2,55.89 L-179.8,55.89 L-179.8,83.29 L-172.8,83.29 L-172.8,62.89 L-167.2,62.89 L-167.2,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-100.4,83.29 L-100.4,43.29 L-107.4,43.29 L-107.4,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-75.2,83.29 L-75.2,43.29 L-94.8,43.29 L-94.8,83.29 L-87.8,83.29 L-87.8,50.29 L-82.2,50.29 L-82.2,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-62.6,83.29 L-62.6,43.29 L-69.6,43.29 L-69.6,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-15.4,83.29 L-15.4,43.29 L-22.4,43.29 L-22.4,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M22.4,83.29 L22.4,43.29 L-9.8,43.29 L-9.8,83.29 L-2.8,83.29 L-2.8,50.29 L2.8,50.29 L2.8,83.29 L9.8,83.29 L9.8,50.29 L15.4,50.29 L15.4,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M69.6,83.29 L69.6,43.29 L62.6,43.29 L62.6,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M107.4,83.29 L107.4,43.29 L75.2,43.29 L75.2,83.29 L82.2,83.29 L82.2,50.29 L100.4,50.29 L100.4,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M94.8,83.29 L94.8,55.89 L87.8,55.89 L87.8,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M154.6,83.29 L154.6,43.29 L147.6,43.29 L147.6,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M167.2,83.29 L167.2,43.29 L160.2,43.29 L160.2,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M192.4,83.29 L192.4,43.29 L172.8,43.29 L172.8,83.29 L179.8,83.29 L179.8,50.29 L185.4,50.29 L185.4,83.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-185.4,183.29 L-185.4,143.29 L-192.4,143.29 L-192.4,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-172.8,183.29 L-172.8,143.29 L-179.8,143.29 L-179.8,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-160.2,183.29 L-160.2,143.29 L-167.2,143.29 L-167.2,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-147.6,183.29 L-147.6,143.29 L-154.6,143.29 L-154.6,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-62.6,183.29 L-62.6,143.29 L-107.4,143.29 L-107.4,183.29 L-100.4,183.29 L-100.4,150.29 L-69.6,150.29 L-69.6,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-87.8,183.29 L-87.8,155.89 L-94.8,155.89 L-94.8,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-75.2,183.29 L-75.2,155.89 L-82.2,155.89 L-82.2,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M22.4,183.29 L22.4,143.29 L-22.4,143.29 L-22.4,183.29 L-15.4,183.29 L-15.4,150.29 L2.8,150.29 L2.8,183.29 L9.8,183.29 L9.8,150.29 L15.4,150.29 L15.4,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M-2.8,183.29 L-2.8,155.89 L-9.8,155.89 L-9.8,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M94.8,183.29 L94.8,143.29 L62.6,143.29 L62.6,183.29 L69.6,183.29 L69.6,150.29 L87.8,150.29 L87.8,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M82.2,183.29 L82.2,155.89 L75.2,155.89 L75.2,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M107.4,183.29 L107.4,143.29 L100.4,143.29 L100.4,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M179.8,183.29 L179.8,143.29 L147.6,143.29 L147.6,183.29 L154.6,183.29 L154.6,150.29 L172.8,150.29 L172.8,183.29 Z" fill="rgba(93,93,93,1)"/>
+<path d="M192.4,183.29 L192.4,155.89 L160.2,155.89 L160.2,183.29 L167.2,183.29 L167.2,162.89 L185.4,162.89 L185.4,183.29 Z" fill="rgba(93,93,93,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -192.4 3.289999999999992)">0000</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -107.4 3.289999999999992)">0001</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -22.400000000000006 3.289999999999992)">0011</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 62.599999999999994 3.289999999999992)">0012</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 147.6 3.289999999999992)">0010</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -192.4 103.28999999999999)">0110</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -107.4 103.28999999999999)">0112</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -22.400000000000006 103.28999999999999)">0111</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 62.599999999999994 103.28999999999999)">0121</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 147.6 103.28999999999999)">0122</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -192.4 203.29)">0123</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -107.4 203.29)">0120</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 -22.400000000000006 203.29)">0100</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 62.599999999999994 203.29)">0102</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(93,93,93,1)" transform="matrix(1 0 0 1 147.6 203.29)">0101</text>
+</svg>

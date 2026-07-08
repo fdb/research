@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-175.78 -130.4 351.55 360.8">
+<path d="M-152.877,-107.5 L152.877,-107.5 L152.877,207.5 L-152.877,207.5 Z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,1)" stroke-width="2"/>
+<path d="M-152.877,-107.5 L152.877,-107.5 L152.877,-72.5 L-152.877,-72.5 Z" fill="rgba(246,246,246,1)"/>
+<path d="M-152.877,-72.5 L152.877,-72.5 L152.877,-37.5 L-152.877,-37.5 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-152.877,-37.5 L152.877,-37.5 L152.877,-2.5 L-152.877,-2.5 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-152.877,-2.5 L152.877,-2.5 L152.877,32.5 L-152.877,32.5 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-152.877,32.5 L152.877,32.5 L152.877,67.5 L-152.877,67.5 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-152.877,67.5 L152.877,67.5 L152.877,102.5 L-152.877,102.5 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-152.877,102.5 L152.877,102.5 L152.877,137.5 L-152.877,137.5 Z" fill="rgba(243,246,250,1)"/>
+<path d="M-152.877,137.5 L152.877,137.5 L152.877,172.5 L-152.877,172.5 Z" fill="rgba(255,255,255,1)"/>
+<path d="M-152.877,172.5 L152.877,172.5 L152.877,207.5 L-152.877,207.5 Z" fill="rgba(243,246,250,1)"/>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 -84.435)">value</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 -49.43500000000002)">96</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 -14.435000000000016)">85</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 20.564999999999987)">72</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 55.56499999999998)">59</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 90.56499999999998)">11</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 125.56499999999998)">87</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 160.565)">84</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(0,0,0,1)" transform="matrix(1.75 0 0 1.75 -117.87650000000001 195.565)">9</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana-Bold, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 -84.435)">running total</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 -49.43500000000002)">96</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 -14.435000000000016)">181</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 20.564999999999987)">253</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 55.56499999999998)">312</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 90.56499999999998)">323</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 125.56499999999998)">410</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 160.565)">494</text>
+<text x="0" y="0" text-anchor="start" font-family="Verdana, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,0,0,1)" transform="matrix(1.75 0 0 1.75 2.3135000000000048 195.565)">503</text>
+</svg>
