@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NodeBox · one NodeBox, on the web</title>
+    <meta
+      name="description"
+      content="Research: unifying NodeBox (Java desktop) and NodeBox Live (web) into one web-based node editor — list-matching, subnetworks AND code nodes, no build step."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23111'/%3E%3Crect x='2' y='2' width='5' height='3' fill='%23a78bfa'/%3E%3Crect x='9' y='6' width='5' height='3' fill='%23fff'/%3E%3Crect x='2' y='11' width='5' height='3' fill='%23999'/%3E%3Cpath d='M4.5 5v6M11.5 3.5v2.5' stroke='%23666'/%3E%3C/svg%3E"
+    />
+    <style>
+      .launch {
+        display: inline-block;
+        border: 1px solid var(--fg);
+        padding: 0.6rem 1.2rem;
+        font-weight: 650;
+        color: var(--fg);
+      }
+      .launch:hover {
+        background: var(--fg);
+        color: var(--bg);
+        text-decoration: none;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space);
+      }
+      @media (max-width: 480px) {
+        .cols {
+          grid-template-columns: 1fr;
+        }
+      }
+      .cols > div {
+        border: 1px solid var(--border);
+        padding: var(--space);
+      }
+      .cols h3 {
+        margin-top: 0;
+        font-size: 1rem;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      kbd {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+        border: 1px solid var(--border);
+        padding: 0 0.3em;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 0.25rem 1rem 0.25rem 0;
+        border-top: 1px solid var(--border);
+        font-size: 0.9rem;
+        vertical-align: top;
+      }
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="muted"><a href="/">research</a> / nodebox</p>
+      <h1>One NodeBox, on the web</h1>
+      <p>
+        <a href="https://www.nodebox.net">NodeBox</a> exists twice: a classic
+        <a href="https://github.com/nodebox/nodebox">Java desktop app</a> (immutable node graphs,
+        list-matching evaluation, subnetworks) and <em>NodeBox Live</em>, a web version (node types
+        as JavaScript source, JSON documents, data tables). This experiment researches — and
+        prototypes — the <strong>ultimate</strong> version: what one web-based NodeBox should keep
+        from each ancestor.
+      </p>
+
+      <p style="margin: 2rem 0">
+        <a class="launch" href="app.html">Launch the live demo →</a>
+      </p>
+
+      <h2>The one-sentence answer</h2>
+      <p>
+        Take Java NodeBox's <strong>semantics</strong> — immutable documents, list-matching
+        evaluation, subnetworks with published ports, deterministic seeds — and NodeBox Live's
+        <strong>substance</strong> — JSON documents, node types as editable JavaScript, a clean
+        core/UI split — and make the two composition mechanisms one thing: every node type is
+        <em>typed ports + an implementation</em>, whether that implementation is a built-in
+        function, an ES module stored in the document, or a nested network.
+      </p>
+
+      <div class="cols">
+        <div>
+          <h3>From the Java version</h3>
+          <p class="muted" style="font-size: 0.9rem">
+            List-matching (one <code>rect</code> node → 144 rectangles, shorter inputs cycling) ·
+            subnetworks as nodes, published ports, breadcrumbs · immutable document + structural
+            sharing → snapshot undo and identity-keyed render cache · frame/mouse only via
+            <code>context</code> ports · explicit seeds everywhere · fuzzy node-insert dialog ·
+            draggable numbers.
+          </p>
+        </div>
+        <div>
+          <h3>From NodeBox Live</h3>
+          <p class="muted" style="font-size: 0.9rem">
+            JSON document format with sparse values + formatVersion migrations · code nodes: a node
+            type is an ES module source string in the document · core ← runtime ← UI layering,
+            headless-capable core · Canvas2D network editor · SVG export · static-JSON publishing
+            model (documented, faked here).
+          </p>
+        </div>
+      </div>
+
+      <h2>Try this in the demo</h2>
+      <p class="muted" style="font-size: 0.95rem">
+        The starter document animates a grid of 144 rectangles sized and colored by their distance
+        to a wandering point — built from ~10 nodes and all three implementation kinds.
+      </p>
+      <ul style="font-size: 0.95rem">
+        <li>Press <strong>▶</strong> — the <code>frame</code> node drives two <code>wave</code> nodes.</li>
+        <li>Select <code>grid1</code> and <em>drag</em> the “columns” number label.</li>
+        <li>Double-click <code>size1 ▸</code> — that's a <strong>subnetwork</strong> (distance →
+          convert_range) with published ports; press <kbd>u</kbd> to come back up.</li>
+        <li>Double-click empty canvas, type “gear” — a <strong>code node</strong> stored in the
+          document. Wire <code>grid1</code> into its position: one gear per grid point, no loop
+          written anywhere. Edit its source via <strong>ƒ</strong>.</li>
+        <li>Select nodes and press <kbd>⌘G</kbd> to group them into a subnetwork. <kbd>⌘Z</kbd>
+          undoes anything. Export the result as <strong>svg</strong>.</li>
+      </ul>
+
+      <h2>Architecture</h2>
+      <table>
+        <tr>
+          <th><code>core/</code></th>
+          <td>
+            no-DOM ES modules, JSDoc-typed: <code>graphics.js</code> (plain-data paths/groups,
+            Canvas2D + SVG renderers), <code>model.js</code> (immutable document, node types, code
+            node compiler), <code>eval.js</code> (list-matching evaluator + cache),
+            <code>stdlib.js</code> (~60 classic nodes), <code>persistence.js</code> (fake backend)
+          </td>
+        </tr>
+        <tr>
+          <th><code>ui/</code></th>
+          <td>
+            React 19 + Tailwind via ES import maps and CDN — no build step, <code>htm</code>
+            instead of JSX. Canvas network editor, parameter panel, viewer, insert/code dialogs.
+          </td>
+        </tr>
+        <tr>
+          <th><code>doc/</code></th>
+          <td>
+            <a href="doc/COMPARISON.md">COMPARISON.md</a> — the two codebases, studied ·
+            <a href="doc/DECISIONS.md">DECISIONS.md</a> — every tradeoff, with what was given up
+          </td>
+        </tr>
+      </table>
+
+      <h2>What's intentionally fake</h2>
+      <p class="muted" style="font-size: 0.95rem">
+        Persistence. The demo “saves” to localStorage through
+        <code>core/persistence.js</code>, which mimics the real API (list/load/save + debounced
+        autosave) and documents what a backend needs — modeled on NodeBox Live's server: JWT auth,
+        whole-document JSON saves, publish-to-static-hosting so playback and embedding never touch
+        the API. Also deferred, by design not omission: code-node sandboxing, expressions, viewer
+        handles, text nodes, data tables, path booleans — each has a documented landing spot in
+        <a href="doc/DECISIONS.md">DECISIONS.md</a>.
+      </p>
+
+      <hr />
+      <p class="desc muted">
+        A research experiment · <a href="/">research.enigmeta.com</a> ·
+        <a href="README.md">README</a>
+      </p>
+    </main>
+  </body>
+</html>
