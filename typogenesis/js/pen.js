@@ -68,6 +68,72 @@ function computeOffsets(pts, closed) {
   return normals;
 }
 
+// Signed curvature per point (1/radius; positive = turning left).
+// Used to keep the offset on the concave side from folding over itself:
+// an offset larger than the local curvature radius self-intersects, and
+// the folded region winds backwards — visible as a white gash in the fill.
+function curvatures(pts, closed) {
+  const n = pts.length;
+  const out = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    let ia = i - 1;
+    let ib = i + 1;
+    if (closed) {
+      ia = (ia + n) % n;
+      ib = ib % n;
+    } else if (i === 0 || i === n - 1) continue;
+    const a = pts[ia];
+    const b = pts[i];
+    const c = pts[ib];
+    const abx = b.x - a.x;
+    const aby = b.y - a.y;
+    const bcx = c.x - b.x;
+    const bcy = c.y - b.y;
+    const cross = abx * bcy - aby * bcx;
+    if (Math.abs(cross) < 1e-9) continue;
+    const la = Math.hypot(abx, aby);
+    const lb = Math.hypot(bcx, bcy);
+    const lc = Math.hypot(c.x - a.x, c.y - a.y);
+    const R = (la * lb * lc) / (2 * Math.abs(cross));
+    out[i] = (cross > 0 ? 1 : -1) / Math.max(R, 1e-6);
+  }
+  return out;
+}
+
+// Clamp an offset distance against the curvature of the side it offsets to.
+function clampSide(h, k, sign) {
+  // sign +1: offsetting to the left (+normal); concave there when k > 0.
+  if (k * sign > 1e-9) {
+    const r = 1 / (k * sign);
+    return Math.min(h, r * 0.92);
+  }
+  return h;
+}
+
+// 'join' caps: extend the end along its tangent so it buries itself in the
+// partner stroke instead of stopping at a glancing angle (which leaves a
+// notch). Returns a new pts array.
+function extendJoins(pts, stroke, P) {
+  let out = pts;
+  const ext = (i0, i1) => {
+    const dx = pts[i1].x - pts[i0].x;
+    const dy = pts[i1].y - pts[i0].y;
+    const l = Math.hypot(dx, dy) || 1;
+    const e = (thicknessAt(dx / l, dy / l, P, stroke) / 2) * 1.15;
+    return { x: (dx / l) * e, y: (dy / l) * e };
+  };
+  if (stroke.cap0 === "join") {
+    const e = ext(0, 1);
+    out = [{ x: pts[0].x - e.x, y: pts[0].y - e.y }, ...out];
+  }
+  if (stroke.cap1 === "join") {
+    const n = pts.length;
+    const e = ext(n - 2, n - 1);
+    out = [...out, { x: pts[n - 1].x + e.x, y: pts[n - 1].y + e.y }];
+  }
+  return out;
+}
+
 function taperFactor(i, n, stroke, P) {
   if (!P.taper || (!stroke.taper0 && !stroke.taper1)) return 1;
   const span = Math.max(4, n * 0.35);
@@ -95,15 +161,18 @@ function roundCap(p, dirx, diry, halfw, into) {
 
 // Expand one stroke → { contours: [...], serifEnds: [...] }
 function expandStroke(stroke, P) {
-  const pts = stroke.pts;
+  let pts = stroke.pts;
   if (stroke.blob) {
     const c = pts.slice();
     if (signedArea(c) < 0) c.reverse();
     return { contours: [c], serifEnds: [] };
   }
+  if (!stroke.closed && (stroke.cap0 === "join" || stroke.cap1 === "join"))
+    pts = extendJoins(pts, stroke, P);
   const n = pts.length;
   if (n < 2) return { contours: [], serifEnds: [] };
   const normals = computeOffsets(pts, stroke.closed);
+  const curv = curvatures(pts, stroke.closed);
 
   const halfs = new Array(n);
   for (let i = 0; i < n; i++) {
@@ -118,11 +187,14 @@ function expandStroke(stroke, P) {
     for (let i = 0; i < n; i++) {
       const nm = normals[i];
       const h = halfs[i];
-      outer.push({ x: pts[i].x + nm.nx * h, y: pts[i].y + nm.ny * h });
-      inner.push({ x: pts[i].x - nm.nx * h, y: pts[i].y - nm.ny * h });
+      const hL = clampSide(h, curv[i], 1);
+      const hR = clampSide(h, curv[i], -1);
+      outer.push({ x: pts[i].x + nm.nx * hL, y: pts[i].y + nm.ny * hL });
+      inner.push({ x: pts[i].x - nm.nx * hR, y: pts[i].y - nm.ny * hR });
     }
-    // Ring orientation: outer must wind opposite to inner for nonzero fill.
-    if (signedArea(outer) < signedArea(inner)) {
+    // Ring orientation: the larger contour is the outer one, regardless of
+    // skeleton direction (a rotated glyph may traverse its ring clockwise).
+    if (Math.abs(signedArea(outer)) < Math.abs(signedArea(inner))) {
       // outer offset went inward — swap
       return finalizeClosed(inner, outer);
     }
@@ -135,8 +207,10 @@ function expandStroke(stroke, P) {
   for (let i = 0; i < n; i++) {
     const nm = normals[i];
     const h = halfs[i];
-    left.push({ x: pts[i].x + nm.nx * h, y: pts[i].y + nm.ny * h });
-    right.push({ x: pts[i].x - nm.nx * h, y: pts[i].y - nm.ny * h });
+    const hL = clampSide(h, curv[i], 1);
+    const hR = clampSide(h, curv[i], -1);
+    left.push({ x: pts[i].x + nm.nx * hL, y: pts[i].y + nm.ny * hL });
+    right.push({ x: pts[i].x - nm.nx * hR, y: pts[i].y - nm.ny * hR });
   }
   const contour = left.slice();
   const serifEnds = [];
@@ -163,6 +237,7 @@ function expandStroke(stroke, P) {
 
 function resolveCap(cap, P) {
   if (cap === "serif" && P.serifLen <= 0) return "flat";
+  if (cap === "join") return "flat"; // geometry already extended
   return cap || "flat";
 }
 
