@@ -691,7 +691,7 @@ function archStroke(P, xL, xR, yTopOuter, descendTo, opts = {}) {
         { x: xR, y: descendTo },
       ]
     ),
-    cap0: "flat",
+    cap0: "join",
     cap1: "serif",
     ...opts,
   };
@@ -1044,7 +1044,7 @@ def("2", (P, m, wf) => {
       {
         pts: joinPts(arcPts, [{ x: m * 1.2, y: P.T * 0.7 }]),
         cap0: "round",
-        cap1: "flat",
+        cap1: "join",
         taper0: true,
       },
       L(m * 0.5, P.T / 2, w - m * 0.5, P.T / 2),
@@ -1066,11 +1066,11 @@ def("3", (P, m, wf) => {
     strokes: [
       arc(P, w / 2, cyT, (w / 2 - m) * 0.92, ryT, 150, -90, {
         cap0: "round",
-        cap1: "flat",
+        cap1: "join",
         taper0: true,
       }),
       arc(P, w / 2, cyB, w / 2 - m, ryB, 90, -150, {
-        cap0: "flat",
+        cap0: "join",
         cap1: "round",
         taper1: true,
       }),
@@ -1101,9 +1101,11 @@ def("5", (P, m, wf) => {
   return {
     w,
     strokes: [
-      L(m * 1.1, P.C - P.T / 2, w - m * 0.7, P.C - P.T / 2, { fixed: P.T }),
-      L(m * 1.1, P.C - P.T * 0.6, m * 1.1, yb - P.T * 0.2, { mult: 0.94 }),
-      arc(P, w / 2, cy5, w / 2 - m, ry5, 142, -150, {
+      L(m, P.C - P.T / 2, w - m * 0.7, P.C - P.T / 2, { fixed: P.T }),
+      // Stem lands exactly on the bowl's 180° point (vertical tangents on
+      // both sides of the joint, so the flat ends coincide seamlessly).
+      L(m, P.C - P.T * 0.6, m, cy5, { mult: 0.94 }),
+      arc(P, w / 2, cy5, w / 2 - m, ry5, 180, -150, {
         cap0: "flat",
         cap1: "round",
         taper1: true,
@@ -1116,17 +1118,34 @@ function sixStrokes(P, m, w) {
   const ym = 0.62 * P.C;
   const cyR = (ym - P.o + P.T / 2) / 2;
   const ryR = ym - cyR;
-  const cx6 = w / 2 + 0.1 * (w / 2);
-  const rx6 = w / 2 - m + 0.1 * (w / 2);
+  const rx = w / 2 - m;
+  const cx = w / 2;
+  // Upper sweep: a taller, slightly offset arc that crosses the bowl like a
+  // chord. It must end INSIDE the bowl's stroke band: stopping short leaves
+  // a crevice, punching through folds the offset into a winding gash. So we
+  // sample it, find where it crosses the bowl centerline, and continue just
+  // far enough to bury the end.
+  const cx6 = cx + 0.1 * (w / 2);
+  const rx6 = rx + 0.1 * (w / 2);
   const cy6 = 0.55 * P.C;
   const ry6 = P.C + P.o - P.T / 2 - cy6;
+  const raw = sampleSuperArc(cx6, cy6, rx6, ry6, P.k, 55 * D2R, 215 * D2R, 60);
+  const pts = [];
+  let buried = 0;
+  for (let i = 0; i < raw.length; i++) {
+    const p = raw[i];
+    pts.push(p);
+    const v =
+      Math.pow(Math.abs(p.x - cx) / rx, P.k) +
+      Math.pow(Math.abs(p.y - cyR) / ryR, P.k);
+    if (v < 1) {
+      if (i > 0) buried += Math.hypot(p.x - raw[i - 1].x, p.y - raw[i - 1].y);
+      if (buried > P.W * 0.55) break;
+    }
+  }
   return [
-    ring(P, w / 2, cyR, w / 2 - m, ryR),
-    arc(P, cx6, cy6, rx6, ry6, 62, 196, {
-      cap0: "round",
-      cap1: "flat",
-      taper0: true,
-    }),
+    ring(P, cx, cyR, rx, ryR),
+    { pts, cap0: "round", cap1: "flat", taper0: true },
   ];
 }
 
