@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>spektrum — laying tracks while the train is running</title>
+    <meta
+      name="description"
+      content="An explorable lab on the spectrum of live-coding instruments: from pure functions built from scratch, through visual node patching, to agentic AI that rebuilds the environment mid-performance."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="spektrum.css" />
+  </head>
+  <body class="essay">
+    <main class="wrap">
+      <p><a href="/">← research</a></p>
+
+      <div class="hero">
+        <h1>spektrum</h1>
+        <p class="big">
+          Live-coding instruments live on a spectrum. At one end: tiny
+          languages built from scratch on strong functional primitives —
+          you play the abstraction. At the other: a coding agent that
+          rewrites the instrument while it plays — you play the
+          <em>conversation</em>. This lab builds one working environment
+          that spans the whole spectrum, and an ICLC talk about what we
+          found along the way.
+        </p>
+        <p>
+          <a class="cta" href="lab.html">open the lab ▶</a>
+          <a class="cta" href="talk.html">read the talk proposal</a>
+        </p>
+        <p class="footnote">
+          Sound on. Everything runs in the browser — Web Audio synthesis,
+          drums generated from first principles (no sample files), GLSL
+          fragment shaders for visuals. No build step, no framework.
+        </p>
+      </div>
+
+      <hr />
+
+      <h2>The spectrum</h2>
+      <p>
+        Pick a point. Each stop below is a fully playable station in the
+        lab — and crucially, they are <strong>three views of the same
+        running system</strong>, not three separate toys.
+      </p>
+
+      <div class="spectrum-diagram" id="spectrum">
+        <div class="spectrum-axis">
+          <button class="spectrum-stop" style="left: 8%" data-i="0"><span class="lbl">I · pure functions</span></button>
+          <button class="spectrum-stop" style="left: 50%" data-i="1"><span class="lbl">II · node graphs</span></button>
+          <button class="spectrum-stop" style="left: 92%" data-i="2"><span class="lbl">III · coding agents</span></button>
+        </div>
+        <div class="spectrum-desc" id="spectrum-desc"></div>
+      </div>
+
+      <h2>One substrate, three skins</h2>
+      <p>
+        Underneath all three stations sits one engine and one project:
+      </p>
+      <pre>scene/pattern.js    the text program        (station I edits this)
+scene/graph.json    the node patch          (station II serializes here)
+scene/visual.glsl   the fragment shader     (any station)
+docs/REFERENCE.md   the manual — read by humans <em>and</em> by the agent</pre>
+      <p>
+        A shared clock measures time in <em>cycles</em> (bars). A pattern
+        is a pure function from a time span to events; the scheduler
+        queries it just ahead of the playhead. The node patcher compiles
+        onto the same Web Audio graph and the same clock. The agent gets
+        Claude-Code-style tools — <code>list_files</code>,
+        <code>read_file</code>, <code>write_file</code>,
+        <code>run_file</code> — over those same files. Switch stations
+        mid-performance; the music never stops.
+      </p>
+
+      <h2>Station I — primitives</h2>
+      <p>
+        The minimal end: a pattern language rebuilt from scratch in a few
+        hundred readable lines, in the Tidal/Strudel tradition. The core
+        idea is one type — <code>Pattern&nbsp;=&nbsp;(begin,&nbsp;end)&nbsp;→&nbsp;events</code>
+        — and everything else is function composition: <code>fast</code>,
+        <code>rev</code>, <code>every</code>, <code>euclid</code>,
+        <code>degrade</code>. Even randomness is a pure function of time,
+        so a "random" pattern is identical on every loop and every machine.
+      </p>
+      <p>
+        Try the mini-notation. This widget queries the actual pattern
+        engine — the same code the lab plays:
+      </p>
+
+      <div class="pattern-widget" id="pattern-widget">
+        <input type="text" spellcheck="false" value="bd sn [hh hh] <cp rim>" aria-label="mini-notation input" />
+        <div class="perr"></div>
+        <svg viewBox="0 0 800 120" preserveAspectRatio="none" height="120"></svg>
+        <div class="try">try:
+          <code>bd*4, [~ hh]*4</code> ·
+          <code>bd(3,8) sn</code> ·
+          <code>bd!3 &lt;sn cp&gt;</code> ·
+          <code>[bd sn]*2 hh?</code>
+        </div>
+      </div>
+
+      <p>
+        Two cycles are shown; layers stack vertically. Note how
+        <code>&lt;a b&gt;</code> alternates per cycle and
+        <code>(3,8)</code> distributes hits euclideanly — rhythm as
+        arithmetic.
+      </p>
+      <p>
+        The visual side gets the same treatment: every shader ships with
+        an <strong>SDF raymarching toolkit</strong> — distance-field
+        primitives (<code>sdSphere</code>, <code>sdBox</code>,
+        <code>sdTorus</code>…), smooth blends and repetition operators,
+        and a pipeline that appears the moment you define
+        <code>float map(vec3 p)</code>: raymarcher, normals, soft
+        shadows, ambient occlusion, a look-at camera, and a one-call
+        <code>shade()</code>. Writing a lit raytracer on stage becomes a
+        two-minute act instead of a stunt — and <code>//!nolib</code>
+        removes it all if building the raytracer <em>is</em> the act.
+      </p>
+
+      <h2>Station II — nodes</h2>
+      <p>
+        The middle of the spectrum, where my own history lives (NodeBox,
+        visual dataflow). Sequencers, samplers, synths, filters, LFOs and
+        a macro <em>value</em> knob, patched with typed cables: solid for
+        audio, dashed for events, dotted for modulation. Parameter drags
+        apply live without recompiling; only re-wiring rebuilds the graph,
+        and the transport keeps running through it. The patch is
+        <em>data</em> — it round-trips through
+        <code>scene/graph.json</code>, which means the agent can read your
+        patch, reason about it, and rewrite it as a file.
+      </p>
+
+      <h2>Station III — the agent</h2>
+      <p>
+        The far end: live coding in the age of agentic AI. Station III is
+        a miniature Claude Code whose repository is the scene and whose
+        deploy target is <em>right now</em>: it lists files, reads the
+        same manual you do, writes a change, runs it, hears the error,
+        fixes it — while the previous version keeps playing underneath.
+        Laying the tracks while the train is running.
+      </p>
+      <p>
+        The model runs behind a ~60-line Cloudflare Worker
+        (<code>worker/</code>) that holds the API key; the browser never
+        sees it. No key at hand? The lab ships a <em>recorded session</em>
+        whose tool calls execute for real — only the model's words are
+        canned, and the UI says so.
+      </p>
+      <p>
+        The interesting questions are not technical. When the agent types,
+        what is the performance? Our answer, defended in the talk: the
+        performer's attention moves up one level — from editing text to
+        curating intentions, the same move that took us from soldering to
+        patching to typing. It is still liveness; the risk surface just
+        changes shape (the model can be wrong in more interesting ways
+        than a typo).
+      </p>
+
+      <h2>Ergonomics: what survived across the whole spectrum</h2>
+      <p>
+        Building the same instrument three times is an ergonomics
+        experiment with built-in controls. The principles that held at
+        every point of the spectrum:
+      </p>
+      <ul class="principles">
+        <li><strong>Never go dark.</strong> Errors replace nothing: a bad
+          eval, a broken shader, a malformed patch — the previous state
+          keeps playing while you fix it. The agent gets the same
+          guarantee, and reads the error back through its tools.</li>
+        <li><strong>One gesture to sound.</strong> Play runs the current
+          scene; every demo scene is audible in one click. Cold-start
+          silence kills momentum on stage.</li>
+        <li><strong>The panic key is sacred.</strong> <kbd>esc</kbd>
+          hushes everything, everywhere, always — even mid-agent-turn.</li>
+        <li><strong>Show what just ran.</strong> The evaluated block
+          flashes; tool calls appear as chips; the beat is visible in the
+          header. Feedback is the instrument's soul.</li>
+        <li><strong>Deterministic randomness.</strong> Chance operators
+          hash musical time, so takes are reproducible and loops don't
+          drift between machines.</li>
+        <li><strong>Parameters are gestures.</strong> <kbd>⌘↑/↓</kbd> on
+          any number nudges it <em>and re-runs its block</em> — a filter
+          sweep becomes a keyboard gesture. In the patcher the same move
+          is a vertical drag; in a sequencer you paint step cells.</li>
+        <li><strong>Everything is one keystroke away.</strong>
+          <kbd>⌘K</kbd> opens a command palette over stations, scenes and
+          snapshots; the scene auto-snapshots before every agent turn, so
+          trusting the machine costs nothing.</li>
+        <li><strong>One manual.</strong> Human and agent read the same
+          <code>docs/REFERENCE.md</code>. If it's not in the manual, the
+          instrument doesn't do it.</li>
+      </ul>
+
+      <h2>Demo scenes</h2>
+      <p>
+        The lab's <em>scenes…</em> menu loads worked examples at each
+        point of the spectrum: <em>first beat</em>, <em>acid</em>,
+        <em>night drive</em> and a lit SDF <em>raymarch</em> for station
+        I; a <em>drum machine</em> and an <em>acid wobble</em> patch for
+        station II; and for station III a replayable agent session that
+        builds a track, makes a typo, hears the error, and fixes it
+        without dropping a beat.
+      </p>
+
+      <h2>The talk</h2>
+      <p>
+        The ICLC submission — abstract, performance plan, technical rider
+        and references — is here: <a href="talk.html">Laying Tracks While
+        the Train Is Running</a>. The proposed format is a
+        performance-lecture: one musical idea carried live across all
+        three stations, ending with human and agent editing the same file.
+      </p>
+
+      <hr />
+      <p class="footnote">
+        Part of <a href="/">research.enigmeta.com</a>. Plain HTML/CSS/JS,
+        ES modules, Web Audio, WebGL — view source is the documentation.
+        Pattern core tested in <code>test/pattern.test.mjs</code>.
+      </p>
+    </main>
+    <script type="module" src="js/essay.js"></script>
+  </body>
+</html>

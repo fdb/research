@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>spektrum · lab</title>
+    <meta
+      name="description"
+      content="A live-coding lab across the tool spectrum: pure functions, node patching, and a coding agent — one engine underneath."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="spektrum.css" />
+  </head>
+  <body class="lab">
+    <header class="lab-bar">
+      <a class="brand" href="./">spektrum</a>
+      <nav class="station-nav">
+        <button class="tabbtn" data-station="primitives" title="1">I · primitives</button>
+        <button class="tabbtn" data-station="nodes" title="2">II · nodes</button>
+        <button class="tabbtn" data-station="agent" title="3">III · agent</button>
+      </nav>
+      <div class="transport">
+        <button id="play" class="btn primary" title="run the current scene (space)">▶ play</button>
+        <button id="hush" class="btn" title="silence everything (esc)">■ hush</button>
+        <span class="bpm-wrap" title="drag vertically · or tap t to the beat">bpm <span id="bpm" class="bpm">120</span></span>
+        <span class="beats">
+          <span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span>
+        </span>
+        <canvas id="vu" width="60" height="16" title="master level"></canvas>
+      </div>
+      <select id="scenes" class="scene-select">
+        <option value="">scenes…</option>
+      </select>
+      <span id="global-error" class="global-error hidden"></span>
+      <span class="bar-spacer"></span>
+      <button id="palette-open" class="btn" title="command palette (ctrl/cmd+k)">⌘k</button>
+      <button id="viz-toggle" class="btn" title="toggle visuals pane">viz</button>
+      <button id="help-toggle" class="btn" title="keys & reference (?)">?</button>
+    </header>
+
+    <main class="lab-main">
+      <div class="lab-stations">
+        <section id="station-primitives" class="station"></section>
+        <section id="station-nodes" class="station hidden"></section>
+        <section id="station-agent" class="station hidden"></section>
+      </div>
+      <aside class="lab-viz">
+        <canvas id="viz-canvas"></canvas>
+      </aside>
+    </main>
+
+    <div id="help" class="overlay hidden">
+      <div class="overlay-panel">
+        <pre id="help-body"></pre>
+      </div>
+    </div>
+
+    <div id="palette" class="overlay palette-overlay hidden">
+      <div class="palette-panel">
+        <input id="palette-input" type="text" placeholder="type a command… (scenes, stations, snapshots)"
+          autocomplete="off" spellcheck="false" />
+        <ul id="palette-list"></ul>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
