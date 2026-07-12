@@ -154,7 +154,10 @@ Quick reminders: d1..d9 take patterns; mini-notation strings like
 "bd*2 [~ sn] hh(5,8)"; chain controls .gain() .cutoff() .room(); signals
 sine.range(a,b).slow(n); visuals via scene/visual.glsl with u_bass/u_beat
 uniforms. Drums: bd sn hh oh cp rim lt mt ht cr. Synths: sine tri saw
-square sub bass fm pluck noise.`;
+square sub bass fm pluck noise. Shaders include an SDF raymarching
+toolkit: define float map(vec3 p) with sdSphere/sdBox/smin/opRep etc.,
+then rayDir + shade(ro, rd, lightDir) gives a lit scene in one call
+(full list in the reference).`;
 
 // ------------------------------------------------- streaming API client
 

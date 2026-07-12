@@ -91,6 +91,53 @@ const nd = await page.evaluate(async () => {
 console.log("night-drive:", JSON.stringify(nd));
 if (nd.slots.length < 5 || nd.err) { console.log("FAIL: night drive"); process.exit(1); }
 
+// 4. raymarch scene (SDF toolkit end-to-end)
+await page.selectOption("#scenes", "raymarch");
+await page.waitForTimeout(600);
+const rm = await page.evaluate(async () => {
+  const engine = await import("./js/engine.js");
+  return { slots: [...engine.slots.keys()], err: document.querySelector("#global-error").textContent };
+});
+console.log("raymarch:", JSON.stringify(rm));
+if (rm.slots.length < 4 || rm.err) { console.log("FAIL: raymarch scene"); process.exit(1); }
+
+// 5. SDF injection rules on a fresh ShaderScreen
+const sdfChecks = await page.evaluate(async () => {
+  const { ShaderScreen } = await import("./js/shader.js");
+  const canvas = document.createElement("canvas");
+  canvas.width = 64; canvas.height = 64;
+  const s = new ShaderScreen(canvas);
+  const out = {};
+  // (a) map + full pipeline compiles
+  out.pipeline = s.set(`float map(vec3 p){ return opU(sdSphere(p - vec3(0.0,1.0,0.0), 0.5 + u_bass*0.3), sdPlane(p, 0.0)); }
+void main(){
+  vec2 uv=(gl_FragCoord.xy*2.0-u_res)/u_res.y;
+  vec3 ro=vec3(3.0,1.5,3.0);
+  vec3 rd=rayDir(uv, ro, vec3(0.0,0.8,0.0), 1.7);
+  gl_FragColor=vec4(shade(ro, rd, vec3(0.6,0.9,-0.4)),1.0);
+}`);
+  // (b) plain shader without map still compiles (pipeline not injected)
+  out.plain = s.set("void main(){ gl_FragColor = vec4(vec3(u_rms), 1.0); }");
+  // (c) //!nolib lets you redefine toolkit names from scratch
+  out.nolib = s.set(`//!nolib
+float sdSphere(vec3 p, float r){ return length(p)-r; }
+void main(){ gl_FragColor = vec4(vec3(1.0 - sdSphere(vec3(0.5), 1.0)), 1.0); }`);
+  // (d) redefining without nolib errors non-fatally (previous keeps running)
+  out.conflict = s.set(`float sdSphere(vec3 p, float r){ return length(p)-r; }
+void main(){ gl_FragColor = vec4(1.0); }`);
+  // (e) error line numbers point into the user's source
+  out.lineErr = s.set("void main(){ oops }");
+  return out;
+});
+console.log("sdf checks:", JSON.stringify(sdfChecks).slice(0, 300));
+if (sdfChecks.pipeline || sdfChecks.plain || sdfChecks.nolib) {
+  console.log("FAIL: SDF toolkit should compile cleanly"); process.exit(1);
+}
+if (!sdfChecks.conflict) { console.log("FAIL: redefinition should error"); process.exit(1); }
+if (!/line 1\b/.test(sdfChecks.lineErr || "")) {
+  console.log("FAIL: error line not remapped: " + sdfChecks.lineErr); process.exit(1);
+}
+
 await browser.close();
 server.close();
 console.log("\nscene content checks passed");

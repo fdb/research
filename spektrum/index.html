@@ -107,6 +107,18 @@ docs/REFERENCE.md   the manual — read by humans <em>and</em> by the agent</pre
         <code>(3,8)</code> distributes hits euclideanly — rhythm as
         arithmetic.
       </p>
+      <p>
+        The visual side gets the same treatment: every shader ships with
+        an <strong>SDF raymarching toolkit</strong> — distance-field
+        primitives (<code>sdSphere</code>, <code>sdBox</code>,
+        <code>sdTorus</code>…), smooth blends and repetition operators,
+        and a pipeline that appears the moment you define
+        <code>float map(vec3 p)</code>: raymarcher, normals, soft
+        shadows, ambient occlusion, a look-at camera, and a one-call
+        <code>shade()</code>. Writing a lit raytracer on stage becomes a
+        two-minute act instead of a stunt — and <code>//!nolib</code>
+        removes it all if building the raytracer <em>is</em> the act.
+      </p>
 
       <h2>Station II — nodes</h2>
       <p>
@@ -185,11 +197,12 @@ docs/REFERENCE.md   the manual — read by humans <em>and</em> by the agent</pre
       <h2>Demo scenes</h2>
       <p>
         The lab's <em>scenes…</em> menu loads worked examples at each
-        point of the spectrum: <em>first beat</em>, <em>acid</em> and
-        <em>night drive</em> for station I; a <em>drum machine</em> and an
-        <em>acid wobble</em> patch for station II; and for station III a
-        replayable agent session that builds a track, makes a typo, hears
-        the error, and fixes it without dropping a beat.
+        point of the spectrum: <em>first beat</em>, <em>acid</em>,
+        <em>night drive</em> and a lit SDF <em>raymarch</em> for station
+        I; a <em>drum machine</em> and an <em>acid wobble</em> patch for
+        station II; and for station III a replayable agent session that
+        builds a track, makes a typo, hears the error, and fixes it
+        without dropping a beat.
       </p>
 
       <h2>The talk</h2>

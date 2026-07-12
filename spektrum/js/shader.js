@@ -8,6 +8,7 @@
  */
 
 import { levels, nowCycle } from "./engine.js";
+import { sdfPrelude } from "./sdf.js";
 
 const HEADER = `precision highp float;
 uniform vec2  u_res;    // canvas size in px
@@ -53,16 +54,20 @@ export class ShaderScreen {
   }
 
   // Compile new fragment source; keep the old program on failure.
+  // The SDF toolkit (js/sdf.js) is prepended automatically — the
+  // map-dependent half only when the source defines `float map(vec3 p)`,
+  // and `//!nolib` in the source removes all of it.
   set(src) {
     const gl = this.gl;
     if (!gl) return "no webgl";
-    const full = HEADER + "\n" + src;
+    const prelude = HEADER + sdfPrelude(src) + "\n";
+    const full = prelude + src;
     const vs = compile(gl, gl.VERTEX_SHADER, VERT);
     const fs = compile(gl, gl.FRAGMENT_SHADER, full);
     if (typeof fs === "string") {
-      // adjust line numbers for the header we prepended
-      const headerLines = HEADER.split("\n").length;
-      this.error = fs.replace(/ERROR: 0:(\d+)/g, (_, l) => `line ${l - headerLines}`);
+      // adjust line numbers for everything we prepended
+      const preludeLines = prelude.split("\n").length;
+      this.error = fs.replace(/ERROR: 0:(\d+)/g, (_, l) => `line ${l - preludeLines + 1}`);
       this.onError?.(this.error);
       return this.error;
     }

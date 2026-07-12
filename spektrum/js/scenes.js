@@ -9,6 +9,7 @@
 
 import { REFERENCE_MD } from "./docs.js";
 import * as vfs from "./vfs.js";
+import * as engine from "./engine.js";
 
 // ------------------------------------------------------------- shaders
 
@@ -60,6 +61,55 @@ void main() {
   gl_FragColor = vec4(col, 1.0);
 }`;
 
+const SHADER_RAYMARCH = `// raymarch — SDFs + lighting from the built-in toolkit.
+// you write map(); rayMarch/calcNormal/softShadow/calcAO/shade come free.
+// (//!nolib disables the toolkit if you'd rather build it on stage.)
+
+float map(vec3 p) {
+  vec3 q = p;
+  q.xz = rot(u_cycle * 1.5708) * q.xz;              // quarter turn per cycle
+
+  float core = sdSphere(q - vec3(0.0, 1.1, 0.0), 0.55 + u_bass * 0.45);
+  vec3 o = vec3(sin(u_cycle * 6.2832) * 1.3, 1.1, cos(u_cycle * 6.2832) * 1.3);
+  float moon = sdSphere(q - o, 0.22 + u_mid * 0.2);
+  float ring = sdTorus(q - vec3(0.0, 1.1, 0.0), vec2(1.5, 0.08 + u_high * 0.12));
+  float boxes = sdBox(opRep(q + vec3(0.0, 0.0, 0.0), vec3(6.0, 0.0, 6.0)) - vec3(0.0, 0.4, 0.0),
+                      vec3(0.3, 0.4 + u_bass * 0.3, 0.3));
+
+  float d = smin(core, moon, 0.6);
+  d = smin(d, ring, 0.25);
+  d = opU(d, boxes);
+  return opU(d, sdPlane(p, 0.0));                    // ground
+}
+
+void main() {
+  vec2 uv = (gl_FragCoord.xy * 2.0 - u_res) / u_res.y;
+  vec3 ro = vec3(5.4 * sin(u_time * 0.15), 2.6 + 0.4 * sin(u_time * 0.1), 5.4 * cos(u_time * 0.15));
+  vec3 ta = vec3(0.0, 0.8, 0.0);
+  vec3 rd = rayDir(uv, ro, ta, 1.25);
+
+  vec3 lig = normalize(vec3(0.6, 0.9, -0.4));
+  float t = rayMarch(ro, rd);
+  vec3 col = vec3(0.0);
+  if (t > 0.0) {
+    vec3 p = ro + rd * t;
+    vec3 n = calcNormal(p);
+    float dif = clamp(dot(n, lig), 0.0, 1.0);
+    float sh = softShadow(p + n * 0.02, lig, 16.0);
+    float ao = calcAO(p, n);
+    vec3 mat = vec3(0.85);
+    if (p.y < 0.001) {                               // checker floor
+      float ch = mod(floor(p.x) + floor(p.z), 2.0);
+      mat = vec3(0.18 + 0.35 * ch);
+    }
+    col = mat * (vec3(0.10) * (0.5 + 0.5 * n.y) * ao + vec3(0.9) * dif * sh);
+    col += pow(clamp(dot(reflect(rd, n), lig), 0.0, 1.0), 32.0) * sh * 0.5;
+    col = mix(col, vec3(0.0), 1.0 - exp(-0.003 * t * t));
+  }
+  col += vec3(0.05) * smoothstep(1.0, 0.0, u_beat);  // kick flash in the air
+  gl_FragColor = vec4(pow(col, vec3(0.4545)), 1.0);
+}`;
+
 // ------------------------------------------------------------ patterns
 
 const PATTERN_FIRST = `// station I — first beat
@@ -108,6 +158,24 @@ d5( n("0 [~ 3] 7 [10 <12 14>]").scale("a2 minor").s("pluck")
 d6( note("[a3,c4,e4] ~ ~ [g3,b3,d4] ~ ~ ~ ~").s("saw")
     .attack(.15).release(.6).legato(2).cutoff(1200)
     .gain(.28).room(.6).slow(2) )
+`;
+
+const PATTERN_RAYMARCH = `// station I — raymarch (the visuals are the star here)
+bpm(122)
+
+d1( s("bd ~ bd ~, ~ ~ [~ bd] ~").gain(.9) )
+
+d2( s("~ rim ~ <rim cp>").room(.4).gain(.55) )
+
+d3( s("hh*8").gain("0.4 0.15").degradeBy(.15).pan(sine.slow(2)) )
+
+d4( n("<0 0 -2 3>").scale("d1 minor").s("sub").legato(.95).gain(.8) )
+
+d5( n("0 ~ 7 ~ 3 ~ <10 12> ~").scale("d3 minor").s("fm").fmh(2).fmi(4)
+    .release(.3).gain(.3).delay(.45).room(.3).slow(2) )
+
+// the shader defines map() — edit visual.glsl and watch the
+// geometry follow u_bass / u_mid / u_high
 `;
 
 // --------------------------------------------------------- node graphs
@@ -290,6 +358,13 @@ export const SCENES = [
     run: ["scene/pattern.js", "scene/visual.glsl"],
   },
   {
+    id: "raymarch",
+    title: "I · raymarch (SDF toolkit)",
+    station: "primitives",
+    files: { "scene/pattern.js": PATTERN_RAYMARCH, "scene/visual.glsl": SHADER_RAYMARCH },
+    run: ["scene/pattern.js", "scene/visual.glsl"],
+  },
+  {
     id: "drum-machine",
     title: "II · drum machine",
     station: "nodes",
@@ -324,6 +399,7 @@ export function loadScene(scene, { runtime, agentCtl, switchStation }) {
     vfs.write(path, content);
   }
   switchStation?.(scene.station);
+  engine.clearSlots(); // a scene replaces what's playing, no stale layers
   for (const path of scene.run || []) {
     const content = vfs.read(path);
     if (content !== null) runtime.applyFile(path, content);

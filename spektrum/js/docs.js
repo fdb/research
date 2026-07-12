@@ -92,6 +92,46 @@ visual(\`...\`) compiles a GLSL fragment shader. Provided uniforms:
 Write a full void main() { ... gl_FragColor = ... }.
 Compile errors keep the previous shader running.
 
+## sdf raymarching toolkit (built into every shader)
+
+Distance-field primitives and operators are always available:
+
+    sdSphere(p,r) sdBox(p,b) sdRoundBox(p,b,r) sdTorus(p,vec2(R,r))
+    sdCylinder(p,h,r) sdCapsule(p,a,b,r) sdOctahedron(p,s) sdPlane(p,h)
+    opU(a,b) opSub(a,b) opI(a,b)         union / subtract / intersect
+    smin(a,b,k) smax(a,b,k)              smooth blends
+    opRep(p,c) opRepXZ(p.xz,c)           infinite repetition
+    rot(a)                               mat2 rotation: p.xz = rot(a)*p.xz
+
+Define  float map(vec3 p)  (the scene as a distance field) and the
+full pipeline unlocks:
+
+    float t = rayMarch(ro, rd)           distance along ray, -1 = sky
+    vec3  n = calcNormal(p)
+    float s = softShadow(p + n*.02, lightDir, 16.0)
+    float a = calcAO(p, n)
+    vec3 rd = rayDir(uv, ro, target, fov)     look-at camera (fov ~1.7)
+    vec3  c = shade(ro, rd, lightDir)    the whole raytracer in one call:
+                                         lambert + specular + shadows +
+                                         AO + fog, grayscale — tint it
+
+Minimal complete raymarcher:
+
+    float map(vec3 p) {
+      float ball = sdSphere(p - vec3(0.0, 1.0, 0.0), 0.6 + u_bass*0.4);
+      return opU(ball, sdPlane(p, 0.0));
+    }
+    void main() {
+      vec2 uv = (gl_FragCoord.xy*2.0 - u_res) / u_res.y;
+      vec3 ro = vec3(3.0*sin(u_time*0.2), 1.8, 3.0*cos(u_time*0.2));
+      vec3 rd = rayDir(uv, ro, vec3(0.0, 0.8, 0.0), 1.7);
+      vec3 col = shade(ro, rd, vec3(0.6, 0.9, -0.4));
+      gl_FragColor = vec4(pow(col, vec3(0.4545)), 1.0);
+    }
+
+Put \`//!nolib\` on its own line to remove the toolkit and build
+everything from scratch.
+
 ## project files
 
     scene/pattern.js   the text program (run: evaluates it)
