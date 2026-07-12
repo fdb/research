@@ -71,6 +71,21 @@ export function buildFont(genome) {
   };
 }
 
+// Construction view of one glyph: outline contours + raw skeleton strokes,
+// in the same (unshifted, unslanted) coordinate space. For the anatomy view.
+export function glyphAnatomy(genome, ch) {
+  const P = resolve(genome);
+  const fn = GLYPHS[ch];
+  if (!fn) return null;
+  const g = fn(P, P.W / 2, P.width);
+  return {
+    P,
+    w: g.w,
+    strokes: g.strokes,
+    contours: expandGlyph(g.strokes, P),
+  };
+}
+
 function computeBBox(contours) {
   if (!contours.length) return null;
   let xMin = Infinity,

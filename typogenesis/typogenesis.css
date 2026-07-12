@@ -151,6 +151,21 @@ body {
   accent-color: var(--fg);
 }
 
+.tg-slider button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.tg-slider button.on {
+  background: var(--fg);
+  color: var(--bg);
+}
+
 .tg-history {
   display: flex;
   gap: 0.4rem;
@@ -195,6 +210,35 @@ body {
 .tg-gene output {
   text-align: right;
   color: var(--muted);
+}
+
+.tg-charstrip {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+
+.tg-charstrip button {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tg-charstrip button.active {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.tg-anatomy {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--border);
 }
 
 /* Specimen */

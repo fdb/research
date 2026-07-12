@@ -10,8 +10,8 @@ import {
   decodeGenome,
   genomeSeed,
 } from "./genome.js";
-import { buildFont } from "./font.js";
-import { drawFitted } from "./render.js";
+import { buildFont, glyphAnatomy, CHARSET } from "./font.js";
+import { drawFitted, drawAnatomy } from "./render.js";
 import { compileTTF } from "./ttf.js";
 import { fontName } from "./names.js";
 
@@ -194,6 +194,34 @@ function syncSliders() {
   }
 }
 
+let anatomyChar = "g";
+
+function buildCharStrip() {
+  const strip = $("#anatomy-chars");
+  for (const ch of CHARSET) {
+    const b = document.createElement("button");
+    b.textContent = ch;
+    if (ch === anatomyChar) b.classList.add("active");
+    b.addEventListener("click", () => {
+      anatomyChar = ch;
+      for (const x of strip.children) x.classList.toggle("active", x === b);
+      renderAnatomy();
+    });
+    strip.appendChild(b);
+  }
+}
+
+function renderAnatomy() {
+  const anatomy = glyphAnatomy(champion, anatomyChar);
+  if (!anatomy) return;
+  const css = getComputedStyle(document.documentElement);
+  drawAnatomy($("#anatomy"), anatomy, {
+    fg: css.getPropertyValue("--fg").trim() || "#000",
+    muted: css.getPropertyValue("--border").trim() || "#ccc",
+    accent: css.getPropertyValue("--primary").trim() || "#7050c0",
+  });
+}
+
 function renderGenes() {
   drawFitted(
     $("#genes-preview"),
@@ -201,6 +229,7 @@ function renderGenes() {
     "Handgloves\n0123456789",
     { pad: 12 }
   );
+  renderAnatomy();
 }
 
 // --- Specimen view ----------------------------------------------------------
@@ -259,6 +288,7 @@ function renderActive() {
 
 function bindUI() {
   buildSliders();
+  buildCharStrip();
   syncSliders();
 
   for (const b of document.querySelectorAll(".tg-tabs button"))
@@ -286,6 +316,42 @@ function bindUI() {
     breed();
     renderEvolve();
   });
+
+  $("#btn-drift").addEventListener("click", toggleDrift);
+}
+
+// --- Drift: ambient auto-evolution ------------------------------------------
+
+let driftTimer = null;
+let driftTicks = 0;
+
+function toggleDrift() {
+  const btn = $("#btn-drift");
+  if (driftTimer) {
+    clearInterval(driftTimer);
+    driftTimer = null;
+    btn.textContent = "▶";
+    btn.classList.remove("on");
+    breed();
+    renderEvolve();
+    return;
+  }
+  btn.textContent = "⏸";
+  btn.classList.add("on");
+  driftTimer = setInterval(() => {
+    if (activeView !== "evolve" || document.hidden) return;
+    driftTicks++;
+    if (driftTicks % 8 === 0) {
+      history.push(champion);
+      if (history.length > 40) history.shift();
+    }
+    champion = mutate(champion, Math.random, 0.1);
+    onChampionChanged();
+    drawFitted($("#champion"), fontFor(champion), nameLines(champion), {
+      pad: 14,
+    });
+    if (driftTicks % 8 === 0) renderHistory();
+  }, 1000);
 }
 
 function flash(btn, txt) {

@@ -43,6 +43,7 @@
           <label class="tg-slider">
             <span>mutation</span>
             <input id="mutation" type="range" min="5" max="100" value="45" />
+            <button id="btn-drift" title="drift: ambient auto-evolution">▶</button>
           </label>
           <div id="history-wrap">
             <p class="tg-hint">lineage — tap to go back</p>
@@ -54,6 +55,11 @@
         <section id="view-genes" class="tg-view" hidden>
           <canvas id="genes-preview" class="tg-champion"></canvas>
           <div id="sliders"></div>
+          <p class="tg-hint">
+            anatomy — the colored line is the skeleton the pen follows
+          </p>
+          <div id="anatomy-chars" class="tg-charstrip"></div>
+          <canvas id="anatomy" class="tg-anatomy"></canvas>
         </section>
 
         <!-- SPECIMEN -->
