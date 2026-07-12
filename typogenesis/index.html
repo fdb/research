@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>typogenesis · research</title>
+    <meta
+      name="description"
+      content="Breed typefaces in your browser. Every font is a genome; the app compiles a real installable TTF from scratch, live."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="typogenesis.css?v=b2" />
+    <!--
+      Cache busting without a build step: bump ?v= here (map + script src)
+      on every release. The import map rewrites the bare module URLs that
+      inter-module imports resolve to, so one fresh HTML load busts every
+      module. The About tab shows the running build (read from
+      import.meta.url), and /_headers marks this folder no-cache so future
+      deploys propagate immediately anyway.
+    -->
+    <script type="importmap">
+      {
+        "imports": {
+          "/typogenesis/js/app.js": "/typogenesis/js/app.js?v=b2",
+          "/typogenesis/js/font.js": "/typogenesis/js/font.js?v=b2",
+          "/typogenesis/js/genome.js": "/typogenesis/js/genome.js?v=b2",
+          "/typogenesis/js/glyphs.js": "/typogenesis/js/glyphs.js?v=b2",
+          "/typogenesis/js/names.js": "/typogenesis/js/names.js?v=b2",
+          "/typogenesis/js/pen.js": "/typogenesis/js/pen.js?v=b2",
+          "/typogenesis/js/render.js": "/typogenesis/js/render.js?v=b2",
+          "/typogenesis/js/ttf.js": "/typogenesis/js/ttf.js?v=b2",
+          "/typogenesis/js/util.js": "/typogenesis/js/util.js?v=b2"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="tg-app">
+      <header class="tg-header">
+        <div class="tg-title-row">
+          <a class="tg-back" href="/">research</a>
+          <span class="tg-exp">typogenesis</span>
+        </div>
+        <div class="tg-name-row">
+          <h1 id="font-name">…</h1>
+          <div class="tg-actions">
+            <button id="btn-random" title="random genome">🎲</button>
+            <button id="btn-share" title="copy link to this font">⧉</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="tg-main">
+        <!-- EVOLVE -->
+        <section id="view-evolve" class="tg-view">
+          <canvas id="champion" class="tg-champion"></canvas>
+          <p class="tg-hint">
+            Tap an offspring to make it the new parent. The last three are a
+            wild card, a cross with an ancestor, and a stranger.
+          </p>
+          <div id="offspring" class="tg-grid"></div>
+          <label class="tg-slider">
+            <span>mutation</span>
+            <input id="mutation" type="range" min="5" max="100" value="45" />
+            <button id="btn-drift" title="drift: ambient auto-evolution">▶</button>
+          </label>
+          <div id="history-wrap">
+            <p class="tg-hint">lineage — tap to go back</p>
+            <div id="history" class="tg-history"></div>
+          </div>
+        </section>
+
+        <!-- GENES -->
+        <section id="view-genes" class="tg-view" hidden>
+          <canvas id="genes-preview" class="tg-champion"></canvas>
+          <div id="sliders"></div>
+          <p class="tg-hint">
+            anatomy — the colored line is the skeleton the pen follows
+          </p>
+          <div id="anatomy-chars" class="tg-charstrip"></div>
+          <canvas id="anatomy" class="tg-anatomy"></canvas>
+        </section>
+
+        <!-- SPECIMEN -->
+        <section id="view-specimen" class="tg-view" hidden>
+          <div class="tg-specimen-actions">
+            <button id="btn-download" class="tg-primary">
+              Download .ttf
+            </button>
+            <span id="ttf-size" class="tg-hint"></span>
+          </div>
+          <div id="specimen" class="tg-specimen">
+            <p class="tg-spec-giant" id="spec-giant">Aa</p>
+            <p class="tg-spec-name" id="spec-name"></p>
+            <hr />
+            <p class="tg-spec-line tg-s48">Hamburgefonstiv</p>
+            <p class="tg-spec-line tg-s32">The quick brown fox jumps over the lazy dog</p>
+            <p class="tg-spec-line tg-s24">Sphinx of black quartz, judge my vow! 0123456789</p>
+            <p class="tg-spec-charset">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+              abcdefghijklmnopqrstuvwxyz<br />
+              0123456789 .,:;!?-–'"()/
+            </p>
+            <p class="tg-spec-para" contenteditable="true" spellcheck="false">
+              Type is a beautiful group of letters, not a group of beautiful
+              letters. This paragraph is editable — write something and see
+              how the font you just bred handles real text. It was compiled
+              in your browser as a genuine TrueType file: tap Download and
+              install it anywhere.
+            </p>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="view-about" class="tg-view" hidden>
+          <div class="tg-about">
+            <h2>What is this?</h2>
+            <p>
+              A generative type foundry that runs entirely in your browser.
+              Every typeface here is a <strong>genome</strong> — fourteen
+              genes (weight, contrast, roundness, aperture, pen angle,
+              serifs…) that feed parametric glyph skeletons. A virtual pen
+              expands the skeletons into outlines, and letters emerge.
+            </p>
+            <p>
+              <strong>Evolve</strong> breeds fonts: each tile is a mutated
+              child of the current parent. Tap what looks good; taste is the
+              fitness function. <strong>Genes</strong> exposes the raw
+              parameters. <strong>Specimen</strong> compiles your genome into
+              a real TrueType file — every table written from scratch in
+              JavaScript, no libraries — and loads it via the FontFace API,
+              so the text you see is rendered by the browser's actual font
+              engine. The download installs on any OS.
+            </p>
+            <p>
+              Font names are generated by a small grammar, a nod to
+              ChoiceWords; the whole thing is a nod to NodeBox and
+              opentype.js. No build step, no server: view source.
+            </p>
+            <p>
+              Share a font by copying its link — the genome travels in the
+              URL.
+            </p>
+            <p class="tg-hint">build <span id="build-version">?</span></p>
+          </div>
+        </section>
+      </main>
+
+      <nav class="tg-tabs">
+        <button data-view="evolve" class="active">Evolve</button>
+        <button data-view="genes">Genes</button>
+        <button data-view="specimen">Specimen</button>
+        <button data-view="about">?</button>
+      </nav>
+    </div>
+    <script type="module" src="js/app.js?v=b2"></script>
+  </body>
+</html>
