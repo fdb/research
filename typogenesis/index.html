@@ -13,7 +13,30 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="typogenesis.css" />
+    <link rel="stylesheet" href="typogenesis.css?v=b2" />
+    <!--
+      Cache busting without a build step: bump ?v= here (map + script src)
+      on every release. The import map rewrites the bare module URLs that
+      inter-module imports resolve to, so one fresh HTML load busts every
+      module. The About tab shows the running build (read from
+      import.meta.url), and /_headers marks this folder no-cache so future
+      deploys propagate immediately anyway.
+    -->
+    <script type="importmap">
+      {
+        "imports": {
+          "/typogenesis/js/app.js": "/typogenesis/js/app.js?v=b2",
+          "/typogenesis/js/font.js": "/typogenesis/js/font.js?v=b2",
+          "/typogenesis/js/genome.js": "/typogenesis/js/genome.js?v=b2",
+          "/typogenesis/js/glyphs.js": "/typogenesis/js/glyphs.js?v=b2",
+          "/typogenesis/js/names.js": "/typogenesis/js/names.js?v=b2",
+          "/typogenesis/js/pen.js": "/typogenesis/js/pen.js?v=b2",
+          "/typogenesis/js/render.js": "/typogenesis/js/render.js?v=b2",
+          "/typogenesis/js/ttf.js": "/typogenesis/js/ttf.js?v=b2",
+          "/typogenesis/js/util.js": "/typogenesis/js/util.js?v=b2"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="tg-app">
@@ -122,6 +145,7 @@
               Share a font by copying its link — the genome travels in the
               URL.
             </p>
+            <p class="tg-hint">build <span id="build-version">?</span></p>
           </div>
         </section>
       </main>
@@ -133,6 +157,6 @@
         <button data-view="about">?</button>
       </nav>
     </div>
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/app.js?v=b2"></script>
   </body>
 </html>

@@ -49,3 +49,12 @@ Made with, and as an homage to: [opentype.js](https://github.com/opentypejs/open
 long tradition of parametric type from Metafont to variable fonts.
 
 Genuinely no build step: ES modules, canvas 2D, FontFace API. View source.
+
+## Releasing
+
+Bump the `?v=` token in `index.html` (import map + script src, one string,
+e.g. `b2` → `b3`) whenever the JS changes. The import map gives every module
+a fresh URL, so one HTML load busts all cached modules; the About tab shows
+the running build so you can always tell which code a device has. The
+repo-root `_headers` file additionally marks `/typogenesis/*` no-cache on
+Cloudflare Pages, so browsers revalidate (etag 304) on every load.

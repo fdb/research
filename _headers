@@ -1,0 +1,12 @@
+# Cloudflare Pages headers.
+# HTML and the typogenesis app revalidate on every load (cheap etag 304s),
+# so deploys propagate immediately instead of after the default 4h max-age.
+
+/typogenesis/*
+  Cache-Control: no-cache
+
+/typogenesis
+  Cache-Control: no-cache
+
+/
+  Cache-Control: no-cache
