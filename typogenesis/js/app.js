@@ -44,7 +44,15 @@ function fontFor(genome) {
 
 // --- Boot -------------------------------------------------------------------
 
+// Build identifier: the ?v= this module was loaded with (set by the import
+// map in index.html). "unversioned" means a stale-cached, pre-import-map app.
+const BUILD =
+  new URL(import.meta.url).searchParams.get("v") || "unversioned";
+
 function boot() {
+  console.log("typogenesis build", BUILD);
+  const bv = document.getElementById("build-version");
+  if (bv) bv.textContent = BUILD;
   const fromHash = location.hash.match(/g=([0-9a-f]+)/i);
   champion = (fromHash && decodeGenome(fromHash[1])) || randomGenome();
   breed();
