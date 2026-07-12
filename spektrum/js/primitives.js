@@ -7,7 +7,7 @@
  * appear here live.
  */
 
-import { Editor } from "./editor.js";
+import { Editor, langForPath } from "./editor.js";
 import * as vfs from "./vfs.js";
 
 const FILES = ["scene/pattern.js", "scene/visual.glsl"];
@@ -28,7 +28,7 @@ export function mountPrimitives(root, runtime) {
 
   const status = document.createElement("div");
   status.className = "statusline";
-  status.textContent = "ctrl+enter — run block · ctrl+shift+enter — run all · esc — hush";
+  status.textContent = "⌘enter run block · ⌘↑/↓ nudge number & re-run · ⌘/ mute line · esc hush · ? all keys";
   pane.appendChild(status);
 
   let current = FILES[0];
@@ -78,6 +78,7 @@ export function mountPrimitives(root, runtime) {
 
   function openFile(f) {
     current = f;
+    editor.setLang(langForPath(f));
     editor.value = vfs.read(f) ?? "";
     renderTabs();
     editor.focus();

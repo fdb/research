@@ -81,6 +81,43 @@ export function replaceAll(newFiles) {
   notify(null);
 }
 
+// ---- snapshots: cheap safety for risky moments (agent turns, scene
+// loads, "let me try something"). A ring buffer in localStorage.
+
+const SNAP_KEY = "spektrum.snapshots.v1";
+const SNAP_MAX = 24;
+
+function loadSnaps() {
+  try { return JSON.parse(localStorage.getItem(SNAP_KEY)) || []; }
+  catch { return []; }
+}
+
+export function snapshots() {
+  return loadSnaps();
+}
+
+export function snapshot(label = "snapshot") {
+  load();
+  const snaps = loadSnaps();
+  const last = snaps[snaps.length - 1];
+  const filesJson = JSON.stringify(files);
+  if (last && JSON.stringify(last.files) === filesJson) return last; // no-op if unchanged
+  const snap = { t: Date.now(), label: String(label).slice(0, 60), files: JSON.parse(filesJson) };
+  snaps.push(snap);
+  while (snaps.length > SNAP_MAX) snaps.shift();
+  try { localStorage.setItem(SNAP_KEY, JSON.stringify(snaps)); }
+  catch (e) { console.warn("vfs: snapshot failed", e); }
+  return snap;
+}
+
+export function restoreSnapshot(index) {
+  const snaps = loadSnaps();
+  const snap = snaps[index];
+  if (!snap) return null;
+  replaceAll(snap.files);
+  return snap;
+}
+
 export function seedIfEmpty(defaults) {
   load();
   if (Object.keys(files).length === 0) {

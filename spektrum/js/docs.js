@@ -100,11 +100,33 @@ Compile errors keep the previous shader running.
     docs/REFERENCE.md  this file
 `;
 
-export const KEYS_MD = `## keys
+export const KEYS_MD = `## keys (mod = ctrl or cmd)
 
-    ctrl/cmd+enter          run block under cursor
-    ctrl/cmd+shift+enter    run whole buffer
-    esc  or  ctrl+.         hush (panic — always works)
-    1 / 2 / 3               switch station (when not typing)
-    ?                       toggle this help
+  everywhere
+    esc  or  mod+.        hush (panic — always works)
+    mod+k                 command palette (scenes, stations, snapshots)
+    space                 play — run the current scene
+    1 / 2 / 3             switch station        t (tap)   tap tempo
+    ?                     toggle this help      mod+s     save snapshot
+
+  editor
+    mod+enter             run block under cursor
+    mod+shift+enter       run whole buffer
+    mod+up / mod+down     nudge number ±1 and re-run its block
+                          (shift = ×10, alt = ×0.1) — sweep params live
+    mod+/                 toggle comment (mute a voice)
+    mod+d                 duplicate line / selection
+    alt+up / alt+down     move line
+    tab / shift+tab       indent / dedent
+
+  nodes
+    dbl-click canvas      add node (type to filter, enter to place)
+    drag port → port      connect · dbl-click cable: cut
+    mod+d                 duplicate node · arrows: nudge (shift: coarse)
+    del                   delete selection · paint the step cells
+                          (alt-click a cell for an accent)
+
+  agent
+    enter                 send · shift+enter newline · up/down history
+    click a tool chip     open that file in the editor
 `;

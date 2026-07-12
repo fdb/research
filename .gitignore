@@ -12,3 +12,6 @@ node_modules/
 .env
 .env.*
 .dev.vars
+
+# node_modules symlinks too
+node_modules

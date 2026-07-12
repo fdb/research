@@ -14,10 +14,21 @@
 import * as vfs from "./vfs.js";
 import * as engine from "./engine.js";
 import { REFERENCE_MD } from "./docs.js";
-import { Editor } from "./editor.js";
+import { Editor, langForPath } from "./editor.js";
 
 const CFG_KEY = "spektrum.agent.v1";
+const HIST_KEY = "spektrum.agent.history.v1";
 const MAX_TURNS = 16;
+
+// one-tap performance moves — sent immediately, like preset gestures
+const QUICK_PROMPTS = [
+  "give me a groove",
+  "add an acid bassline",
+  "more energy",
+  "strip it back to just drums",
+  "make the visuals react harder",
+  "surprise me",
+];
 
 // ------------------------------------------------------------- tools
 
@@ -223,12 +234,24 @@ async function streamMessage({ url, model, messages, tools, signal, onText }) {
 
 // ---------------------------------------------------------------- UI
 
-export function mountAgent(root, runtime) {
+export function mountAgent(root, runtime, { toast = () => {} } = {}) {
   const tools = makeTools(runtime);
   let cfg = loadCfg();
   let history = [];   // Anthropic messages
   let busy = false;
   let abort = null;
+
+  // prompt history (↑/↓ in the input, like a shell)
+  let promptHistory = [];
+  try { promptHistory = JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch { /* fresh */ }
+  let histCursor = -1;
+  let histDraft = "";
+  function pushPrompt(text) {
+    if (promptHistory[promptHistory.length - 1] !== text) promptHistory.push(text);
+    while (promptHistory.length > 50) promptHistory.shift();
+    localStorage.setItem(HIST_KEY, JSON.stringify(promptHistory));
+    histCursor = -1;
+  }
 
   root.innerHTML = "";
   const el = document.createElement("div");
@@ -265,8 +288,9 @@ export function mountAgent(root, runtime) {
         <button class="btn cfg-save">save</button>
       </div>
       <div class="agent-log"></div>
+      <div class="agent-quick"></div>
       <form class="agent-input">
-        <textarea rows="2" placeholder="ask for music… (enter to send, shift+enter for newline)"></textarea>
+        <textarea rows="2" placeholder="ask for music… (enter to send · ↑ history)"></textarea>
         <div class="agent-input-row">
           <button type="submit" class="btn primary agent-send">send</button>
           <button type="button" class="btn agent-stop hidden">stop</button>
@@ -306,6 +330,7 @@ export function mountAgent(root, runtime) {
   function openFile(path) {
     currentFile = path;
     pathLabel.textContent = path;
+    editor.setLang(langForPath(path));
     editor.value = vfs.read(path) ?? "";
     renderFiles();
   }
@@ -367,6 +392,11 @@ export function mountAgent(root, runtime) {
       name === "read_file" || name === "run_file" ? input.path :
       name === "set_bpm" ? String(input.bpm) : "";
     div.textContent = `⚙ ${name} ${arg}`;
+    if (input?.path) {
+      div.classList.add("clickable");
+      div.title = "open " + input.path;
+      div.onclick = () => openFile(input.path);
+    }
     log.appendChild(div);
     log.scrollTop = log.scrollHeight;
     return div;
@@ -386,6 +416,8 @@ export function mountAgent(root, runtime) {
       return;
     }
     engine.audioCtx(); // user gesture: unlock audio before the agent plays
+    vfs.snapshot(`before agent: ${userText.slice(0, 40)}`); // safety net
+    pushPrompt(userText);
     busy = true;
     setBusy(true);
     bubble("user", userText);
@@ -455,8 +487,49 @@ export function mountAgent(root, runtime) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       $(".agent-input").requestSubmit();
+      return;
+    }
+    // shell-style history: ↑ on the first line, ↓ on the last
+    const beforeCursor = input.value.slice(0, input.selectionStart);
+    if (e.key === "ArrowUp" && !beforeCursor.includes("\n") && promptHistory.length) {
+      e.preventDefault();
+      if (histCursor === -1) { histDraft = input.value; histCursor = promptHistory.length; }
+      histCursor = Math.max(0, histCursor - 1);
+      input.value = promptHistory[histCursor];
+    } else if (e.key === "ArrowDown" && histCursor !== -1) {
+      const afterCursor = input.value.slice(input.selectionEnd);
+      if (afterCursor.includes("\n")) return;
+      e.preventDefault();
+      histCursor++;
+      if (histCursor >= promptHistory.length) {
+        histCursor = -1;
+        input.value = histDraft;
+      } else {
+        input.value = promptHistory[histCursor];
+      }
     }
   });
+
+  // quick prompts — one-tap performance moves
+  const quick = $(".agent-quick");
+  function renderQuick() {
+    quick.innerHTML = "";
+    const prompts = [...QUICK_PROMPTS];
+    if (runtime.lastError) prompts.unshift("fix the last error");
+    for (const p of prompts.slice(0, 6)) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = p;
+      b.onclick = () => {
+        if (busy) return;
+        send(p);
+      };
+      quick.appendChild(b);
+    }
+  }
+  runtime.onError(() => renderQuick());
+  renderQuick();
   $(".agent-stop").onclick = () => abort?.abort();
   $(".agent-clear").onclick = () => {
     history = [];
@@ -470,6 +543,7 @@ export function mountAgent(root, runtime) {
     busy = true;
     setBusy(true);
     engine.audioCtx();
+    vfs.snapshot("before replay session");
     note("replaying a recorded session — tool calls are real, the model is canned", "info");
     try {
       for (const step of script) {

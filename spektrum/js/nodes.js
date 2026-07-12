@@ -127,7 +127,7 @@ export const NODE_TYPES = Object.keys(T);
 
 // ------------------------------------------------------------ station
 
-export function mountNodes(root, runtime) {
+export function mountNodes(root, runtime, { toast = () => {} } = {}) {
   root.innerHTML = "";
   const wrap = document.createElement("div");
   wrap.className = "nodes";
@@ -135,7 +135,7 @@ export function mountNodes(root, runtime) {
     <div class="nodes-bar">
       <button class="btn" data-act="add">+ node</button>
       <button class="btn" data-act="power">run</button>
-      <span class="nodes-hint">double-click canvas: add · drag ports: connect · click cable + del: cut · drag numbers</span>
+      <span class="nodes-hint">dbl-click: add · drag ports: connect · dbl-click cable: cut · ⌘d: duplicate · arrows: nudge · paint the step cells</span>
     </div>
     <div class="nodes-canvas">
       <svg class="nodes-wires"></svg>
@@ -277,7 +277,66 @@ export function mountNodes(root, runtime) {
     return el;
   }
 
+  // Step cells: the drum-machine gesture. Click toggles, drag paints,
+  // alt-click accents. The underlying value stays a plain string in
+  // graph.json, so the agent can still write "x..x" as text.
+  function renderSteps(n, p) {
+    const wrap = document.createElement("div");
+    wrap.className = "steps";
+    let paintVal = null;
+
+    const setChar = (i, ch) => {
+      const chars = String(n.params[p.id]).replace(/\s+/g, "").split("");
+      if (chars[i] === ch) return;
+      chars[i] = ch;
+      setParam(n, p.id, chars.join(""));
+      draw();
+    };
+
+    const resize = (delta) => {
+      let chars = String(n.params[p.id]).replace(/\s+/g, "").split("");
+      if (delta > 0 && chars.length < 32) chars.push(".");
+      if (delta < 0 && chars.length > 2) chars.pop();
+      setParam(n, p.id, chars.join(""));
+      draw();
+      drawWires();
+    };
+
+    function draw() {
+      wrap.innerHTML = "";
+      const chars = String(n.params[p.id]).replace(/\s+/g, "").split("");
+      chars.forEach((ch, i) => {
+        const cell = document.createElement("span");
+        cell.className = "step-cell" +
+          (ch === "x" ? " on" : ch === "X" ? " on accent" : "") +
+          (i % 4 === 0 && i > 0 ? " group" : "");
+        cell.addEventListener("pointerdown", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          paintVal = e.altKey ? (ch === "X" ? "." : "X") : (ch === "." ? "x" : ".");
+          setChar(i, paintVal);
+        });
+        cell.addEventListener("pointerover", (e) => {
+          if (e.buttons === 1 && paintVal !== null) setChar(i, paintVal);
+        });
+        wrap.appendChild(cell);
+      });
+      const less = document.createElement("button");
+      less.className = "step-size";
+      less.textContent = "−";
+      less.onclick = () => resize(-1);
+      const more = document.createElement("button");
+      more.className = "step-size";
+      more.textContent = "+";
+      more.onclick = () => resize(1);
+      wrap.append(less, more);
+    }
+    draw();
+    return wrap;
+  }
+
   function renderParam(n, p) {
+    if (p.id === "steps" && n.type === "seq") return renderSteps(n, p);
     if (p.kind === "select") {
       const sel = document.createElement("select");
       sel.className = "param-select";
@@ -368,6 +427,14 @@ export function mountNodes(root, runtime) {
       path.addEventListener("pointerdown", (ev) => {
         ev.stopPropagation();
         select({ kind: "edge", index: i });
+      });
+      path.addEventListener("dblclick", (ev) => {
+        ev.stopPropagation();
+        graph.edges.splice(i, 1);
+        selection = null;
+        drawWires();
+        saveSoon();
+        recompile();
       });
       svg.appendChild(path);
     });
@@ -477,19 +544,43 @@ export function mountNodes(root, runtime) {
     closePalette();
     const menu = document.createElement("div");
     menu.className = "palette";
-    for (const type of NODE_TYPES) {
-      const b = document.createElement("button");
-      b.textContent = type;
-      b.onclick = () => {
-        const c = canvas.getBoundingClientRect();
-        addNode(type, cx - c.left - view.x, cy - c.top - view.y);
-        closePalette();
-      };
-      menu.appendChild(b);
-    }
-    menu.style.left = cx + "px";
-    menu.style.top = cy + "px";
+    const search = document.createElement("input");
+    search.type = "text";
+    search.placeholder = "filter…";
+    search.className = "palette-search";
+    menu.appendChild(search);
+    const grid = document.createElement("div");
+    grid.className = "palette-grid";
+    menu.appendChild(grid);
+
+    const place = (type) => {
+      const c = canvas.getBoundingClientRect();
+      addNode(type, cx - c.left - view.x, cy - c.top - view.y);
+      closePalette();
+    };
+    const draw = () => {
+      grid.innerHTML = "";
+      const q = search.value.trim().toLowerCase();
+      for (const type of NODE_TYPES.filter((t) => t.includes(q))) {
+        const b = document.createElement("button");
+        b.textContent = type;
+        b.onclick = () => place(type);
+        grid.appendChild(b);
+      }
+    };
+    search.addEventListener("input", draw);
+    search.addEventListener("keydown", (e) => {
+      e.stopPropagation();
+      if (e.key === "Enter") {
+        const first = grid.querySelector("button");
+        if (first) place(first.textContent);
+      } else if (e.key === "Escape") closePalette();
+    });
+    draw();
+    menu.style.left = Math.min(cx, window.innerWidth - 200) + "px";
+    menu.style.top = Math.min(cy, window.innerHeight - 260) + "px";
     document.body.appendChild(menu);
+    search.focus();
     setTimeout(() => document.addEventListener("pointerdown", paletteDismiss), 0);
   }
   function paletteDismiss(e) {
@@ -500,12 +591,35 @@ export function mountNodes(root, runtime) {
     document.removeEventListener("pointerdown", paletteDismiss);
   }
 
-  function addNode(type, x, y) {
-    const n = { id: "n" + nextId++, type, x: Math.round(x), y: Math.round(y), params: defaults(type) };
+  function addNode(type, x, y, params = null) {
+    const n = { id: "n" + nextId++, type, x: Math.round(x), y: Math.round(y), params: { ...defaults(type), ...(params || {}) } };
     graph.nodes.push(n);
     world.appendChild(renderNode(n));
+    select({ kind: "node", id: n.id });
     saveSoon();
     recompile();
+    return n;
+  }
+
+  function duplicateSelection() {
+    if (selection?.kind !== "node") return;
+    const src = nodeById(selection.id);
+    if (!src) return;
+    addNode(src.type, src.x + 26, src.y + 26, JSON.parse(JSON.stringify(src.params)));
+    toast(`duplicated ${src.type}`);
+  }
+
+  function nudgeSelection(dx, dy) {
+    if (selection?.kind !== "node") return false;
+    const n = nodeById(selection.id);
+    if (!n) return false;
+    n.x += dx;
+    n.y += dy;
+    const el = world.querySelector(`.node[data-id="${n.id}"]`);
+    if (el) { el.style.left = n.x + "px"; el.style.top = n.y + "px"; }
+    drawWires();
+    saveSoon();
+    return true;
   }
 
   function select(sel) {
@@ -529,15 +643,27 @@ export function mountNodes(root, runtime) {
     recompile();
   }
 
-  // station-scoped keys (only when this station is visible)
-  root.addEventListener("keydown", (e) => {
+  // station keys — window-level so they work without an explicit focus,
+  // but only while this station is visible and no field is being edited
+  window.addEventListener("keydown", (e) => {
+    if (root.offsetParent === null) return; // station hidden
+    if (["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName)) return;
+    const mod = e.ctrlKey || e.metaKey;
     if (e.key === "Delete" || e.key === "Backspace") {
-      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
       e.preventDefault();
       deleteSelection();
+    } else if (mod && (e.key === "d" || e.key === "D")) {
+      e.preventDefault();
+      duplicateSelection();
+    } else if (e.key.startsWith("Arrow") && selection?.kind === "node") {
+      const step = e.shiftKey ? 22 : 2;
+      const [dx, dy] = {
+        ArrowUp: [0, -step], ArrowDown: [0, step],
+        ArrowLeft: [-step, 0], ArrowRight: [step, 0],
+      }[e.key];
+      if (nudgeSelection(dx, dy)) e.preventDefault();
     }
   });
-  root.tabIndex = -1;
 
   // --------------------------------------------------------- compilation
 
