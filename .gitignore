@@ -8,6 +8,9 @@ Thumbs.db
 # Node (only if an individual experiment ever needs it locally)
 node_modules/
 
+# Test screenshots from experiment tool scripts
+**/tools/shots/
+
 # Local env / secrets
 .env
 .env.*

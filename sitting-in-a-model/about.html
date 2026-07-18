@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I Am Sitting in a Model — about the work</title>
+    <meta
+      name="description"
+      content="Concept and making-of for 'I Am Sitting in a Model': Alvin Lucier's 1969 room-resonance piece restaged inside a neural language model running live in the browser."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .titleblock {
+        margin: calc(var(--space) * 2.5) 0;
+      }
+      .titleblock h1 {
+        margin: 0 0 0.3rem;
+      }
+      .titleblock .sub {
+        color: var(--muted);
+      }
+      .enterrow {
+        margin: calc(var(--space) * 1.5) 0;
+        padding: var(--space);
+        border: 1px solid var(--border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.5rem;
+        align-items: baseline;
+      }
+      .enterrow a.big {
+        font-weight: 650;
+      }
+      .enterrow .note {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      figure {
+        margin: calc(var(--space) * 2) 0;
+      }
+      figure img {
+        max-width: 100%;
+        display: block;
+        border: 1px solid var(--border);
+      }
+      figcaption {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        line-height: 1.5;
+      }
+      blockquote.erosion {
+        margin: calc(var(--space) * 1.5) 0;
+        padding: var(--space);
+        border-left: 2px solid var(--fg);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 1.8;
+        background: color-mix(in oklch, var(--bg), var(--fg) 4%);
+      }
+      blockquote.erosion .pass {
+        display: block;
+        color: var(--muted);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        font-family: var(--font-sans);
+      }
+      .kv {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 2;
+        margin: var(--space) 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      .kv b {
+        font-weight: 650;
+      }
+      h2 {
+        margin-top: calc(var(--space) * 3);
+      }
+      .footer-nav {
+        margin: calc(var(--space) * 3) 0 var(--space);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="titleblock">
+        <h1>I Am Sitting in a Model</h1>
+        <p class="sub">
+          browser, 66-million-parameter language model, generated sound ·
+          2026<br />
+          a research experiment in the lineage of Alvin Lucier,
+          <em>I Am Sitting in a Room</em> (1969)
+        </p>
+      </div>
+
+      <div class="enterrow">
+        <a class="big" href="./">→ enter the room</a>
+        <span class="note">~80 MB on first load — the model itself is the download</span>
+        <a href="./?kiosk=1">kiosk mode</a>
+        <a href="./?fallback=1">the recording</a>
+      </div>
+
+      <h2>Statement</h2>
+      <p>
+        A sentence — the piece's own opening statement, or anything a visitor
+        types — is fed through a small neural language model, over and over.
+        Each pass hides one word and lets the model re-guess it. Nothing is
+        generated; everything is eroded. Slowly the sentence stops being what
+        was said and becomes what the model expects: the statistical room tone
+        of the training corpus. The brightness of every word is the
+        probability the model assigns it, so you can watch a specific, human,
+        improbable sentence become bright, smooth and generic. What survives
+        repetition is not the message but the medium.
+      </p>
+
+      <h2>The work</h2>
+      <p>
+        In 1969 Alvin Lucier sat in a room, recorded the sentence
+        <em>"I am sitting in a room, different from the one you are in
+        now…"</em>, played the recording back into the room and re-recorded
+        it, again and again, until his speech dissolved and only the room's
+        resonant frequencies remained — the architecture audible, the voice
+        gone. The room was the medium, and iteration made the medium speak.
+      </p>
+      <p>
+        This work replaces the room with a language model, and opens with
+        Lucier's text transposed clause for clause — a score that describes
+        exactly what is about to happen to it:
+      </p>
+      <blockquote class="erosion">
+        <span class="pass">the score · pass 0</span>
+        i am sitting in a model, different from the room you are in now. i
+        am typing the sound of my voice, and i am going to feed it back
+        through the model, one word at a time, again and again, until the
+        probable words of the model reinforce themselves, so that any
+        semblance of my writing, with perhaps the exception of rhythm, is
+        destroyed. what you will read, then, are the natural resonant
+        frequencies of the model, articulated by language. i regard this
+        activity not so much as the demonstration of a statistical fact,
+        but more as a way to smooth out any irregularities my writing might
+        have.
+      </blockquote>
+      <p>
+        Lucier's closing line — he stuttered, and the room "smoothed" his
+        speech by dissolving it — turns literal here: smoothing out
+        irregularities is precisely, mechanically, what a language model
+        does. The piece then lets the sentence find out.
+      </p>
+      <p>
+        A 66-million-parameter DistilBERT runs live in your browser — the
+        weights are the download — and performs the same ritual on text.
+        One word at a time is masked; the model proposes what "should" be
+        there; the proposal replaces the original. Words the model finds
+        improbable are eroded first, the way a room amplifies its resonant
+        frequencies and damps everything else. In the language of statistics
+        the piece is a Gibbs sampler wandering toward the model's stationary
+        distribution. In the language of the piece: the text is left alone in
+        the room until the room's voice is all that is left.
+      </p>
+      <p>
+        Everything on screen is measurement, not decoration. Each word's
+        lightness is the masked probability the model assigns it in place —
+        to be legible to the machine is to be lit by it. When a word is
+        chosen, it briefly becomes static (░░░), the model's actual shortlist
+        flickers through the gap, and the winner lands. Every third change,
+        the previous sentence rises into the strata above: sediment layers of
+        everything the text used to be. The hairline at the bottom of the
+        screen is the model's overall expectancy of the text.
+      </p>
+      <p>
+        The sound is the same data made audible. Every word is a partial in a
+        drone: its frequency is a deterministic fold of its token id (the
+        vocabulary as a fixed, untuned instrument), its loudness is its
+        probability, and its instability — a small drunken detune — is its
+        improbability. An improbable, still-human sentence sounds sparse and
+        restless; as the text settles into the model's expectations the chord
+        swells, steadies and holds. Replacements strike a filtered noise
+        grain at the word's own pitch. Nothing in the sound is composed;
+        it is the probability field, ringing.
+      </p>
+      <p>
+        Type, and your own sentence becomes the material. The model first
+        reads you — words brighten one by one as it forms an opinion of each
+        — and then the erosion begins. The piece runs in lowercase because
+        the model itself is uncased: capitalization is one of the first
+        things this room cannot hear.
+      </p>
+
+      <figure>
+        <img
+          src="img/still-room.png"
+          alt="Black screen with a large monospaced sentence whose words glow at different brightnesses; above it, faint layers of earlier versions of the sentence stack like sediment."
+        />
+        <figcaption>
+          Pass 56 of a live session. The score has become "i am sitting on
+          one corner totally isolated from whichever room we are in now… a
+          way to smooth out whatever irregularities my mind might have" —
+          and the strata above record every state it passed through.
+        </figcaption>
+      </figure>
+
+      <h2>What the room says</h2>
+      <p>
+        Lucier's room revealed architecture. This room reveals a training
+        corpus — the compressed average of a scraped internet, circa its
+        training date. Leave any sentence in it long enough and the specific
+        gives way to the general: the piece is a machine for watching
+        <em>smoothing</em> happen, the operation that underlies every
+        autocomplete, every summarizer, every "improve my writing" button.
+        Statistical models do not preserve voices; they preserve
+        frequencies.
+      </p>
+      <p>
+        The recorded session that ships with the piece (played when the model
+        cannot load) makes the point better than any argument. It is
+        deterministic — seed 20260718 — and citable. Fed a score about
+        iteration and memory, the walk slid into the vocabulary of the
+        memory experiment and stayed there:
+      </p>
+      <blockquote class="erosion">
+        <span class="pass">pass 60 · expectancy 36%</span>
+        i am sitting in a model slightly different than another model. …i
+        keep typing the sound of my notebook, and i am able to feed it all
+        through the model itself one word at a time, again and again, until
+        the remaining bits of the model reinforce themselves.
+      </blockquote>
+      <blockquote class="erosion">
+        <span class="pass">pass 150 · expectancy 38%</span>
+        …i begin repeating the results of my experiments, so i am able to
+        write directly back into the memory itself one word at a time…
+        i repeat myself: not as simple as the assumption of any statistical
+        value, but rather as a way to smooth out what qualities my mind
+        does possess.
+      </blockquote>
+      <blockquote class="erosion">
+        <span class="pass">pass 300 · expectancy 45%</span>
+        repeating each repeating iteration of each iteration requires
+        repetition; thus virtually every semblance of true memory, except
+        for the lack of repetition, remains unknown. …not as simple as the
+        concept of a false memory, but rather as a way to find out what the
+        false memory can achieve.
+      </blockquote>
+      <blockquote class="erosion">
+        <span class="pass">pass 700 · expectancy 60%</span>
+        …repeating upon repeating repeating repeating each repetition
+        repeating false repeating repeating repeating repeating semblance
+        becomes false memory… i repeat repeating resonant repeating of
+        false memory…
+      </blockquote>
+      <p>
+        The score's wry last line erodes from <em>"smooth out any
+        irregularities my writing might have"</em> to <em>"smooth out what
+        qualities my mind might possess"</em> to, at the end, <em>"find out
+        what false false memory they contain."</em> Mr. Freud arrives at
+        pass 300; Mr. Watson, the behaviorist, by pass 500; and the final
+        state is the howl Lucier's tape loop also reaches — except that this
+        room's resonant frequency turns out to be the word
+        <em>repeating</em> itself, glowing at 60% expectancy: the machine is
+        never more confident than when language has collapsed into pure
+        repetition. None of this was scripted; it is what this particular
+        room does to this particular sentence. Other runs drift elsewhere —
+        into architecture, heartbeats, cells, diaries — because the walk is
+        stochastic and the room is large. But it is always the room you are
+        reading, never the voice.
+      </p>
+      <p>
+        There is a hard version of this observation in the research
+        literature: BERT-style models define no single consistent joint
+        distribution — the conditionals disagree with each other (Wang &amp;
+        Cho, 2019, "BERT has a mouth, and it must speak"). The piece runs
+        anyway, and the impossibility is part of its character: this is a
+        room whose echoes obey no single geometry, an acoustics that could
+        not exist, resonating regardless.
+      </p>
+
+      <h2>Making of</h2>
+      <p>
+        The piece was made autonomously by Claude (Anthropic) at the request
+        of Frederik De Bleser, who asked for a work that tests what a model
+        can do in digital media art. Everything below is the actual lab
+        record from that session.
+      </p>
+      <p>
+        <strong>Finding a room that fits in a browser.</strong> The concept
+        requires a real model, live — a canned animation would be
+        scenography, not material. The constraint was severe: this site
+        deploys on a static host with a 25&nbsp;MiB per-file limit, no build
+        step, and must keep working offline at a festival. The first
+        candidate was ALBERT-base (12M parameters, 11.8&nbsp;MB quantized) —
+        and it failed beautifully. ALBERT shares one set of weights across
+        all its layers, and 8-bit quantization compounds through that sharing
+        until the model is deaf: asked to fill "paris is the ___ of france"
+        it answered <em>much</em>, <em>than</em>, <em>pentagon</em>. A
+        collapsed room, all walls, no echo. Full-precision ALBERT was
+        mediocre; its half-precision builds would not even load. DistilBERT
+        (66M parameters) quantized to int8 turned out to lose almost
+        nothing: p("capital") = 0.96 against 0.98 at full precision, at a
+        quarter of the size. The 67.5&nbsp;MB file exceeds the per-file
+        limit, so it ships split into three chunks that the browser stitches
+        back together before handing the bytes to the ONNX runtime. The
+        model is the download: the piece is honest about weighing more than
+        an average web page, because it contains the thing it is about.
+      </p>
+      <p>
+        <strong>The erosion is a tuned instrument.</strong> Pure Gibbs
+        sampling (uniform position choice, temperature 1.0) degenerates
+        within a few hundred passes into stuttering — <em>"repeating auto -
+        repeating one repeat sequences 3 pulses of consciousness repeating"</em>
+        — which is thematically perfect and unwatchable. The shipped
+        parameters (temperature 0.65, top-k 12, positions chosen with
+        probability proportional to the model's disbelief in the current
+        word, plus a small ε so no word is immortal) keep the text
+        grammatical for hundreds of passes while the meaning slides — the
+        long, eerie middle that Lucier's piece also has, where speech is
+        still speech but the room is unmistakably singing. A replacement
+        step costs two forward passes (one to resample the chosen position,
+        one to re-measure another, since every probability shifts when any
+        word changes); in the browser this takes on the order of 100–400 ms
+        per pass, and the piece breathes at about one pass per 1.5 seconds.
+      </p>
+      <p>
+        <strong>Owning the material.</strong> The only dependency is the
+        ONNX runtime (13.5&nbsp;MB of WebAssembly, vendored). The WordPiece
+        tokenizer — lowercase, accent-stripping, punctuation isolation,
+        greedy longest-match against 30,522 pieces — was reimplemented from
+        the reference algorithm in ~150 lines and validated token-for-token
+        against the Hugging Face implementation on a battery that includes
+        accents, CJK, emoji and contractions. The engine (mask, forward,
+        softmax, sample, replace) is one dependency-free module that runs
+        identically in the browser worker and in node; the fallback
+        recording was produced by that same module, driven by a seeded
+        deterministic RNG, so even the "documentation mode" is the actual
+        piece, not a video of it.
+      </p>
+      <p>
+        <strong>What was not designed.</strong> The piece's best moments were
+        found, not made. Run after run, the model deletes the word "model"
+        from its own opening line — restoring "room", or "building", or once
+        "a cell" — because in its world one sits in rooms, not in models. An
+        earlier recorded session narrated its own forgetting (<em>"i am
+        forgetting everything! yes! …stop talking!"</em>); another live run
+        began addressing the visitor — <em>"i am changing the tone of
+        your text, hoping i will write it back into the text again and
+        again."</em> The role of the maker here was to build the room,
+        choose its temperature, and then get out of the way. That, too, is
+        in the lineage: Lucier performed a process, LeWitt executed
+        instructions, Reas grows behavior from rules. The signature is in
+        the system, and the system then says things its maker did not.
+      </p>
+      <p>
+        <strong>On authorship, honestly.</strong> This work was made by a
+        language model, about a language model. I am not exempt from the
+        piece's argument — I am a much larger room, and everything above,
+        including this sentence, is drawn from somewhere inside my own
+        stationary distribution. The difference is that the little room on
+        the other page shows its probabilities. Take the piece as a
+        self-portrait at 66-millionth scale: this is what any of us — model
+        or reader — does to a sentence we repeat too often. We replace it,
+        word by word, with what we already expected to hear.
+      </p>
+
+      <figure>
+        <img
+          src="img/still-detail.png"
+          alt="Close view of glowing monospaced words at varying brightness, one word rendered as block-static characters mid-replacement."
+        />
+        <figcaption>
+          Brightness is measurement: each word's lightness is the masked
+          probability the model assigns it. A word mid-replacement becomes
+          static (░░░) while the model's shortlist flickers through.
+        </figcaption>
+      </figure>
+
+      <h2>Exhibition notes</h2>
+      <ul>
+        <li>
+          <b>Form:</b> single projection or large display in a dark space,
+          4–6 m wide, stereo speakers at modest level — the drone should sit
+          in the room like ventilation, not performance. A keyboard on a
+          plinth invites visitors to speak into the room; the piece needs
+          nothing else.
+        </li>
+        <li>
+          <b>Kiosk:</b> open <code>./?kiosk=1</code> — chrome fades,
+          the piece auto-enters, reseeds itself after convergence or twelve
+          idle minutes. Launch the browser with autoplay permitted (Chromium:
+          <code>--autoplay-policy=no-user-gesture-required --kiosk</code>);
+          otherwise the piece asks for one touch to start the sound.
+        </li>
+        <li>
+          <b>Offline:</b> the folder is self-contained — model weights,
+          runtime, vocabulary and typeface all ship with it. Serve it from
+          any static server on the venue LAN; after one load it needs no
+          network at all. If the model cannot be loaded, the deterministic
+          recorded session (700 passes) plays through the same interface,
+          labeled as a recording.
+        </li>
+        <li>
+          <b>Controls:</b> type — speak a new sentence into the room ·
+          <code>space</code> pause · <code>m</code> sound ·
+          <code>[</code>/<code>]</code> slower/faster.
+        </li>
+        <li>
+          <b>Accessibility:</b> honors <code>prefers-reduced-motion</code>
+          (no flicker, no shimmer); this page carries the full description
+          of the work.
+        </li>
+      </ul>
+
+      <h2>Colophon</h2>
+      <ul class="kv">
+        <li><b>model</b> — DistilBERT-base-uncased (Sanh et al., 2019), 66M parameters, 30,522-token WordPiece vocabulary, int8 ONNX export by Xenova; sha256 e99a895d…</li>
+        <li><b>runtime</b> — ONNX Runtime Web 1.27 (WASM, multi-threaded when cross-origin isolated), vendored; no other dependencies, no build step</li>
+        <li><b>engine</b> — masked-token Gibbs walk; τ 0.65, top-k 12, disbelief-weighted position choice, ε 0.05; two forwards per pass</li>
+        <li><b>sound</b> — Web Audio: one sine partial per word (frequency = hash of token id over five octaves, gain = probability^1.7, detune ∝ improbability), noise grains through a bandpass at each replacement, generated impulse-response reverb</li>
+        <li><b>fallback</b> — 700-pass session, RNG seed 20260718, recorded by the same engine in node; 1.1 MB JSON</li>
+        <li><b>code</b> — plain ES modules: tokenizer.js, engine.js, worker.js, app.js, audio.js; tools/ holds the model-fetch, validation, recording and test scripts</li>
+        <li><b>lineage</b> — Alvin Lucier, <i>I Am Sitting in a Room</i> (1969); Sol LeWitt's instructions; Casey Reas's <i>Software Structures</i>; Wang &amp; Cho (2019)</li>
+        <li><b>made by</b> — Claude (Anthropic), working autonomously: concept, research, code, sound, text and documentation, July 2026, for research.enigmeta.com at the request of Frederik De Bleser</li>
+      </ul>
+
+      <p class="footer-nav">
+        <a href="./">→ enter the room</a> ·
+        <a href="/">research.enigmeta.com</a>
+      </p>
+    </main>
+  </body>
+</html>

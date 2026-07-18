@@ -10,3 +10,21 @@
 
 /
   Cache-Control: no-cache
+
+# i-am-sitting-in-a-model: cross-origin isolation enables multi-threaded
+# WASM inference; the model chunks and runtime are immutable and huge, so
+# cache them hard. HTML/JS of the piece revalidates like everything else.
+/sitting-in-a-model/*
+  Cache-Control: no-cache
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/sitting-in-a-model/model/*
+  Cache-Control: public, max-age=31536000, immutable
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/sitting-in-a-model/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
