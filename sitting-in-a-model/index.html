@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I Am Sitting in a Model</title>
+    <meta
+      name="description"
+      content="Alvin Lucier's 'I Am Sitting in a Room' (1969), restaged inside a neural language model. A sentence is masked and re-predicted, word by word, by a 66-million-parameter model running live in your browser, until only the model's own resonant frequencies remain."
+    />
+    <meta property="og:title" content="I Am Sitting in a Model" />
+    <meta
+      property="og:description"
+      content="A sentence is masked and re-predicted by a language model running in your browser until only the model's own resonant frequencies remain. After Alvin Lucier, 1969."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181818'/%3E%3Crect x='3' y='7' width='4' height='2' fill='%23f5f5f5'/%3E%3Crect x='9' y='7' width='4' height='2' fill='%23555'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="piece.css" />
+  </head>
+  <body class="piece">
+    <div id="strata" aria-hidden="true"></div>
+
+    <main id="stage">
+      <p id="sentence" aria-label="the sentence currently being eroded"></p>
+    </main>
+
+    <div id="statusrow">
+      <div id="status">…</div>
+    </div>
+
+    <div id="meter" aria-hidden="true"></div>
+
+    <header id="brand">
+      <a href="/">research</a>
+      <span> / i am sitting in a model / </span>
+      <a href="about.html">about the work</a>
+    </header>
+
+    <div id="veil">
+      <h1>I Am Sitting in a Model</h1>
+      <p class="intro">
+        A sentence is fed through a small neural language model, over and over.
+        One word at a time is hidden and re-guessed. Nothing is generated;
+        everything is eroded. The brightness of each word is the probability
+        the model assigns it — watch your own writing become what the model
+        expects. What survives is not the message but the medium. After Alvin
+        Lucier, <em>I&nbsp;Am&nbsp;Sitting&nbsp;in&nbsp;a&nbsp;Room</em>, 1969.
+      </p>
+      <p id="veil-status">…</p>
+      <div class="row">
+        <button id="enter" disabled>waking the model</button>
+      </div>
+      <a class="aboutlink" href="about.html">about the work / making of</a>
+    </div>
+
+    <div id="typebox">
+      <textarea
+        id="typeinput"
+        rows="2"
+        maxlength="600"
+        spellcheck="false"
+        aria-label="speak a new sentence into the room"
+      ></textarea>
+      <div id="typenote"></div>
+    </div>
+
+    <noscript>
+      <div class="noscript-note">
+        <p>
+          This work is a computation: a language model erodes a sentence, live,
+          in your browser — it cannot run without JavaScript.<br />
+          A description of the piece is at <a href="about.html">about.html</a>.
+        </p>
+      </div>
+    </noscript>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

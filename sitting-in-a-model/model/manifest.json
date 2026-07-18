@@ -1,0 +1,19 @@
+{
+  "source": "Xenova/distilbert-base-uncased onnx/model_int8.onnx",
+  "totalBytes": 67462808,
+  "sha256": "e99a895d751f63e33786ba17216ae813be48a1ddd35fce19fb11adb6830e5757",
+  "parts": [
+    {
+      "name": "model_int8.onnx.part-000",
+      "bytes": 23000000
+    },
+    {
+      "name": "model_int8.onnx.part-001",
+      "bytes": 23000000
+    },
+    {
+      "name": "model_int8.onnx.part-002",
+      "bytes": 21462808
+    }
+  ]
+}
