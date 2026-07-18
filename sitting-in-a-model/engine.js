@@ -18,7 +18,7 @@ export const DEFAULTS = {
   temperature: 0.65,
   topK: 12,
   epsilon: 0.05, // floor on selection weight: no word is immortal
-  maxTokens: 110, // inner tokens, excluding [CLS]/[SEP]
+  maxTokens: 144, // inner tokens, excluding [CLS]/[SEP]; fits the full seed score
   settledP: 0.6,
 };
 

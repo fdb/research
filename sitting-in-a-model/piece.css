@@ -33,8 +33,8 @@ body.piece {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  max-height: 34vh;
-  padding: 0 1rem 2.2rem;
+  max-height: 100%; /* never overflow the grid row into the brand line */
+  padding: 3.2rem 1rem 2.2rem;
   mask-image: linear-gradient(to bottom, transparent, black 55%);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 55%);
 }
@@ -66,6 +66,13 @@ body.piece {
   line-height: 2.05;
   letter-spacing: 0.01em;
   word-spacing: 0.12em;
+}
+
+/* long texts (like the full score) set smaller, leaving air for the strata */
+#sentence.long {
+  max-width: 72ch;
+  font-size: clamp(14px, 0.85vw + 8px, 21px);
+  line-height: 1.95;
 }
 
 #sentence .w {

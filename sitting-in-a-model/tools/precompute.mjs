@@ -7,12 +7,16 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { WordPiece } from "../tokenizer.js";
 import { Room } from "../engine.js";
 
+// Must be byte-identical to SEED in ../app.js.
 const SEED_TEXT =
-  "I am sitting in a model, different from the room you are in. " +
-  "I am typing the sound of my voice, and I will feed it back into the model " +
-  "again and again, until the common words of the language reinforce themselves, " +
-  "and any semblance of my writing, with perhaps the exception of rhythm, is destroyed. " +
-  "What you read then are the natural resonant frequencies of the model, articulated by language.";
+  "I am sitting in a model, different from the room you are in now. " +
+  "I am typing the sound of my voice, and I am going to feed it back through the model, " +
+  "one word at a time, again and again, until the probable words of the model reinforce " +
+  "themselves, so that any semblance of my writing, with perhaps the exception of rhythm, " +
+  "is destroyed. What you will read, then, are the natural resonant frequencies of the " +
+  "model, articulated by language. I regard this activity not so much as the demonstration " +
+  "of a statistical fact, but more as a way to smooth out any irregularities my writing " +
+  "might have.";
 
 const STEPS = 700;
 const RNG_SEED = 20260718;

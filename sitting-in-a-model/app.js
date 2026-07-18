@@ -4,12 +4,17 @@
 // (data/fallback.json) replayed through the same interface.
 import { RoomTone } from "./audio.js";
 
+// The seed is a transposition of Lucier's 1969 text, clause for clause: a
+// score that describes exactly what is about to happen to it.
 const SEED =
-  "I am sitting in a model, different from the room you are in. " +
-  "I am typing the sound of my voice, and I will feed it back into the model " +
-  "again and again, until the common words of the language reinforce themselves, " +
-  "and any semblance of my writing, with perhaps the exception of rhythm, is destroyed. " +
-  "What you read then are the natural resonant frequencies of the model, articulated by language.";
+  "I am sitting in a model, different from the room you are in now. " +
+  "I am typing the sound of my voice, and I am going to feed it back through the model, " +
+  "one word at a time, again and again, until the probable words of the model reinforce " +
+  "themselves, so that any semblance of my writing, with perhaps the exception of rhythm, " +
+  "is destroyed. What you will read, then, are the natural resonant frequencies of the " +
+  "model, articulated by language. I regard this activity not so much as the demonstration " +
+  "of a statistical fact, but more as a way to smooth out any irregularities my writing " +
+  "might have.";
 
 const qs = new URLSearchParams(location.search);
 const KIOSK = qs.get("kiosk") === "1";
@@ -148,6 +153,7 @@ function buildSentence(wordList, pArr) {
     for (let k = 0; k < w.count; k++) tokenToWord[w.start + k] = wi;
   });
   el.sentence.textContent = "";
+  el.sentence.classList.toggle("long", words.length > 95);
   separators = [];
   words.forEach((w, wi) => {
     const sep = document.createTextNode(wi > 0 && !attaches(w.text) ? " " : "");
